@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jq.js"></script>
+<script src="js/jquery.waitforimages.js"></script>
+<script src="js/default.js?v=1"></script>
+<title>Harvest Clicker</title>
+
+<body>
+    <div class="BackgroundContainer">
+        <div class="Title"><img class='TitleImg' src="img/Harvest Clicker.png" alt=""></div>
+        <div class="Money"></div>
+        <div class="Crops"></div>
+    </div>
+    <div class="ShowItems">Sell Crops</div>
+    <div class="Inventory_Items"></div>
+    <div class="PlantHowManyAtATime">Plant How Many At A Time : <span class="HowMany">1x</span></div>
+</body>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+.Stage {
+	border: 12px solid royalblue;
+	background: white;
+	color: black;
+	width: 600px;
+	height: 400px;
+	position: fixed;
+	border-radius: 10px;
+	z-index: 1000;
+}
+
+.HandStats {
+	float: left;
+	width: 95px;
+	margin: 2px;
+	height: 20px;
+	border-radius: 4px;
+	color: white;
+	float: left;
+	text-align: center;
+}
+
+.ZennyTotal {
+	width: 300px;
+	height: 60px;
+	font-size: 18px;
+	text-align: center;
+	background: red;
+	color: black;
+	position: absolute;
+	top: 340px;
+	line-height: 60px;
+}
+
+.Card {
+	width: 40px;
+	height: 70px;
+	margin: 1px;
+}
+
+.Hand {
+	float: left;
+	border: 5px solid white;
+	width: 85px;
+	margin: 2px;
+	height: 76px;
+	border-radius: 4px;
+}
+
+.Poker {
+	left: 300px;
+	position: fixed;
+	z-index: 1001;
+	width: 300px;
+	height: 400px;
+	background: black;
+}
+
+body {
+}
+
+.Background {
+	position: fixed;
+	top: -10px;
+	left: -10px;
+}
+
+.Slider {
+	width: 150px;
+	height: 75px;
+	position: absolute;
+	background: black;
+	border-radius: 20px;
+	border: 10px solid red;
+	left: 225px;
+	top: 162px;
+	z-index: 3;
+}
+
+#rangeInput {
+	width: 140px;
+	margin: 2px;
+}
+
+#SellOrBuy {
+	width: 140px;
+	margin: 2px;
+	text-align: center;
+	color: red;
+}
+
+.SecondPanel {
+	position: absolute;
+	left: 300px;
+	width: 300px;
+	height: 400px;
+	background: black;
+	color: white;
+	z-index: 1;
+}
+
+.MainInfo {
+	width: 300px;
+	height: 175px;
+}
+
+.Character {
+	width: 300px;
+}
+
+.HO {
+	background: black;
+	color: red;
+}
+
+.UHO {
+	background: white;
+	color: black;
+}
+
+a {
+	color: red;
+	cursor: pointer;
+}
+
+a:link {
+	color: red;
+}
+
+/* visited link */
+a:visited {
+	color: purple;
+}
+
+/* mouse over link */
+a:hover {
+	color: red;
+}
+
+/* selected link */
+a:active {
+	color: purple;
+}

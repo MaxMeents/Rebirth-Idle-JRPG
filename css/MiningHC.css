@@ -1,0 +1,124 @@
+.Container {
+    position: relative;
+    display: none;
+}
+
+.MineHolder {
+    position: fixed;
+    border: 3px solid black;
+    height: 350px;
+    width: 228px;
+    z-index: 30;
+    overflow: hidden;
+    background: saddlebrown;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 10px;
+}
+
+.Area {
+    position: absolute;
+}
+
+.AreaName {
+    position: absolute;
+    width: 174px;
+    background: white;
+    color: saddlebrown;
+    text-align: center;
+}
+
+.AreaLevel {
+    position: absolute;
+    left: 137px;
+    width: 91px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.Layer_Image {
+    width: 224px;
+    height: 193px;
+}
+
+.Layer_1 {
+    position: absolute;
+    top: 1px;
+    z-index: 10;
+}
+
+.Layer_2 {
+    position: absolute;
+    top: 22px;
+    z-index: 9;
+}
+
+.Layer_3 {
+    position: absolute;
+    top: 124px;
+    z-index: 8;
+}
+
+.Layer_4 {
+    position: absolute;
+    top: 187px;
+    z-index: 7;
+}
+
+.Health {
+    position: absolute;
+    width: 228px;
+    top: 310px;
+    z-index: 25;
+    background: white;
+    height: 40px;
+    line-height: 40px;
+}
+
+.HealthBarHolder {
+    position: absolute;
+    background: black;
+    height: 33px;
+    margin-top: -36px;
+    left: 60px;
+    width: 164px;
+}
+
+.HealthBar {
+    position: absolute;
+    width: 200px;
+    margin-top: 0px;
+    left: 0px;
+    width: 125px;
+    background: red;
+    height: 33px;
+}
+
+.HealthNumber {
+    position: absolute;
+    z-index: 12;
+    top: 1px;
+    color: white;
+    left: 65px;
+    text-align: right;
+}
+
+.Auto_Sell {
+    width: 0px;
+    display: none;
+    margin-top: 140px;
+}
+
+.Item_Cost {
+    margin-top: 120px;
+}
+
+.Total_Growing {
+    margin-top: 100px;
+}
+
+.Timer {
+    margin-top: 140px;
+    height: 40px;
+}

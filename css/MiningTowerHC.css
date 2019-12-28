@@ -1,0 +1,238 @@
+.IncreaseCoal{
+	position: absolute;
+	z-index: 120;
+	top: 172px;
+	left: -39px;;;;;}
+.IncreaseCoalTop{
+	width: 50px;
+	z-index: 122;
+	position: absolute;;;;}
+.IncreaseCoalBackground{
+	z-index: 121;
+	width:68px;
+	height:68px;
+	position: absolute;
+	margin-left: -10px;
+	margin-top: -4px;;;;;}
+.CloseMining{
+	position: absolute;
+	left: 393px;
+	z-index: 119;
+	width: 50px;
+	top: -84px;;;;;;;}
+
+.Tower{
+	position: relative;
+	margin-left: 170px;
+	background: transparent;
+	width:400px;
+	height:800px;
+	top:100px;
+	
+}
+.AreaName{background:black;width:500px;position: absolute;top:24px;text-align:center;color:red;font-size:29px;border-radius:25px;z-index:105;left:-50px;height:50px;line-height:50px;background-size:492px 99px;}
+.Chunk{
+	position: absolute;
+}
+.Block{
+	position: absolute;;
+}
+.Block > img{
+	width:80px;	
+}
+.Block_1{
+	left:180px;
+	z-index: 100;
+}
+.Block_2{
+	left:136px;
+	top:25px;
+	z-index: 101;
+}
+.Block_3{
+	left:180px;
+	top:52px;
+	z-index: 102;
+}
+.Block_4{
+	left:224px;
+	top:26px;
+	z-index: 101;
+}
+.Chunk_1{
+	z-index: 102;
+}
+.Chunk_2{
+	top:52px;
+	left:-88px;
+	z-index: 103;
+}
+.Chunk_3{
+	top:52px;
+	left:88px;
+	z-index: 103;
+}
+.Chunk_4{
+	top:105px;
+	left:0px; /*change to zero*/
+	z-index: 104;
+}
+.Chunk_16_1{
+	position: absolute; left:-23px;
+}
+.Chunk_16_2{
+position: absolute;top: 48px;left: -83px;z-index: 150;;;;;
+}
+.Chunk_16_3{
+position: absolute;top: 48px;left: 83px;z-index: 150;;;;;
+}
+.Chunk_16_4{
+position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
+}
+.Floor{
+	position: absolute;
+}
+.Floor_1{
+
+}
+.Floor_2{
+	top:23px;
+	z-index: 99;
+}
+.BlockNum{
+	position: absolute;
+	width: 75px;
+	background: white;;
+	height: 40px;
+	border-radius: 11px;
+	text-align: center;
+	color: white;
+	line-height: 40px;
+	font-size: 22px;
+	left: 323px;
+	background-image: url("../img/AreaNum_BG.gif");
+	background-size: 73px 37px;
+	z-index: 80;;
+}
+.BlockHP{
+	position: absolute;
+		width: 117px;
+	background: black;;;
+	height: 55px;
+	border-radius: 35px;
+	text-align: center;
+	color: white;
+	line-height: 40px;
+	font-size: 22px;
+	background-size: 117px 58px;
+	opacity: .8;
+	z-index: 80;;;
+
+}
+
+
+.startingHP{position: absolute;left: 65px;top: 29px;color: white;font-size: 16px;z-index: 80;;;;;;;
+
+}
+.HCIsTitle,.ResourceTitle{
+	font-size: 30px;
+	    width: 100%;
+    text-align: center;
+    background: white;
+    color: black;
+	margin: 25px;
+	margin-left: 60px;;;
+}
+.ResourcesClick > img{
+	width:50px;
+	position:absolute;
+	top:100px;
+	left:-40px;
+	z-index:80;
+}
+.PlantClick > img{
+	width:50px;
+	position:absolute;
+	top:100px;
+	right:-32px;
+	z-index:80;
+}
+.Resource,.HCItemSelected{
+	top: 70%;
+	width: 90%;
+	height: 25%;
+	left: 5%;
+	background: white;
+	border: 8px solid red;
+	border-radius: 20px;
+	position: fixed;
+	z-index: 120;
+	overflow: hidden;
+	display: none;;
+	
+}
+
+.Resources,.HCIs{
+	width: 95%;
+	height: 60%;
+	top: 2%;
+	left: 2.5%;
+	background: white;
+	border: 8px solid red;
+	border-radius: 20px;
+	position: fixed;
+	z-index: 120;
+	overflow: scroll;
+	display: none;;
+	
+}
+
+.ResourceBlock,.HCI{
+	width: 140px;
+	height: 40px;
+	margin: 10px;
+	background: white;
+	position: relative;
+	float: left;
+	margin-right:10px;
+	background: royalblue;
+	border-radius: 15px;
+}
+.ResourceBlock > img,.HCI > img{
+	margin-left:3px;
+	width:40px;
+	height:40px;
+}
+.Clear{
+	clear:both;
+}
+.ResourceBlock > .MiningTitle,.HCI > .MiningTitle{
+	position: absolute;
+	left:50px;
+	line-height: 60px;
+	color:white;
+	font-size: 13px
+
+}
+.ResourceBlock > .Amount,.HCI > .Amount{
+	position: absolute;
+	left:110px;
+	top:-3px;
+	background: black;
+	color:red;
+	width:40px;
+	height:25px;
+	text-align: center;
+	line-height: 25px;
+	border-radius: 20px;
+	font-size: 14px;
+
+}
+.CloseWindow{
+	position: fixed;
+	z-index: 121;
+	right: 14px;
+	width: 50px;;;
+	top:10px;;
+
+}

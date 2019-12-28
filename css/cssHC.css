@@ -1,0 +1,975 @@
+.Container {
+    display: none;
+}
+
+.MiningClick > img {
+    width: 50px;
+    height: 50px;
+}
+
+.MiningClick {
+    z-index: 100;
+    position: fixed;
+    left: 280px;
+}
+
+body {
+    background: black;
+    background-size: 100%;
+    background-image: url("../img/background.jpg");
+}
+
+.ShowClickerMenu {
+    position: fixed;
+}
+
+.ClickerMenu {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+}
+
+.Animals_Inv {
+    color: blue;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Trees_Inv {
+    color: saddlebrown;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    margin-left: 9px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Fruits_Inv {
+    color: red;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Vegetables_Inv {
+    color: green;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Flowers_Inv {
+    color: purple;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Makers_Inv {
+    color: black;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Minerals_Inv {
+    color: royalblue;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.ContainerContainer {
+    border: 1px solid transparent;
+    width: 313px;
+    height: 212px;
+    float: left;
+    margin: 5px;
+}
+
+.Selected {
+    border-color: white;
+}
+
+.Title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: -36px;
+}
+
+.TitleImg {
+    height: 173px;
+    width: 316px;
+    border-radius: 28px;
+}
+
+.PlantHowManyAtATime {
+    position: fixed;
+    right: 56px;
+    width: 57px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 15px 0px 0px 15px;
+    background: blue;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    z-index: 100;
+    top: 8px;
+    font-family: 'Courgette', cursive;
+}
+
+.HowMany {
+    color: black;
+    background: white;
+    border-radius: 0px 15px 15px 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: -41px;
+    top: 0px;
+    line-height: 40px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.SellCrops {
+    position: fixed;
+    z-index: 101;
+    background: white;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    height: 80%;
+    display: none;
+    overflow-y: scroll;
+    border-radius: 10px;
+    border: 15px solid #3E5AF7;
+}
+
+.UpgradeDirt {
+    position: fixed;
+    z-index: 101;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    height: 80%;
+    display: none;
+    overflow-y: scroll;
+    border-radius: 10px;
+    border: 15px solid saddlebrown;
+    background: white;
+}
+
+.Upgrade_Dirt_Img {
+    float: left;
+    position: absolute;
+    border: 3px solid white;
+    top: -3px;
+    width: 152px;
+    height: 42px;
+    left: 107px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.ItemWrap {
+    position: relative;
+    float: left;
+    height: 50px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.Inventory_Item {
+    position: absolute;
+    width: 240px;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 15px;
+    text-indent: 35px;
+    border: 4px solid white;
+    color: black;
+    font-family: 'Dekko', cursive;
+    font-weight: 400;
+    left: 15px;
+    top: 15px;
+    font-size: 16px;
+    background: red;
+}
+
+.SellCrops .ItemImage, .UpgradeDirt>.ItemImage {
+    position: absolute;
+    z-index: 1001;
+    width: 35px;
+    height: 35px;
+    left: 15px;
+    top: 12px;
+}
+
+.ItemImage {
+    position: absolute;
+    z-index: 1001;
+    width: 35px;
+    height: 35px;
+    left: 15px;
+    top: 12px;
+}
+
+.AmountSpan {
+    position: absolute;
+    text-align: right;
+    right: 10px;
+}
+
+.Cost {
+    position: absolute;
+    text-align: right;
+    right: 10px;
+    opacity: 1;
+}
+
+.ShowSell {
+    position: fixed;
+    z-index: 10;
+    right: 17px;
+    width: 82px;
+    height: 42px;
+    line-height: 41px;
+    text-align: center;
+    border-radius: 31px;
+    color: red;
+    background: black;
+    top: 54px;
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+}
+
+.ShowUpgradeDirt {
+    position: fixed;
+    z-index: 10;
+    width: 118px;
+    height: 42px;
+    line-height: 41px;
+    text-align: center;
+    border-radius: 16px;
+    color: saddlebrown;
+    background: white;
+    margin-left: 5px;
+    border: 3px solid white;
+    top: 8px;
+    left: 5px;
+}
+
+.Name {
+    display: none;
+}
+
+.Buy_Better_Dirt {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.BackgroundContainer {
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.Money {
+    position: fixed;
+    z-index: 10;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 33px;
+    text-align: center;
+    color: royalblue;
+    background: white;
+    border-radius: 78px;
+    width: 174px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+.Item {
+    width: 100px;
+    height: 160px;
+    margin-right: 50px;
+    float: left;
+}
+
+.ItemContainer {
+    width: 300px;
+    float: left;
+    border: 6px solid blue;
+    border-radius: 4px;
+    margin: 0px;
+}
+
+.Canvas_Strawberry, .Canvas_Blueberry, .Canvas_Ancient_Fruit, .Canvas_Artichoke {
+    float: left;
+    margin-left: -50px;
+}
+
+.Item_Title {
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+    background: royalblue;
+    z-index: 3;
+    font-size: 12px;
+}
+
+.Item_Cost {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    background: white;
+    color: red;
+    position: absolute;
+    z-index: 3;
+    margin-top: 120px;
+    opacity: 1;
+}
+
+.Dirt, .Item_Image, .Dirt img, .Item_Image img {
+    width: 100px;
+    height: 100px;
+    margin-left: 0;
+    margin-top: 0px;
+}
+
+.Dirt {
+    float: left;
+    position: absolute;
+    z-index: 1;
+}
+
+.Item_Image {
+    float: left;
+    position: absolute;
+    z-index: 2;
+}
+
+.Auto_Sell {
+    width: 100px;
+    height: 20px;
+    margin-top: 100px;
+    position: absolute;
+    background: darkslategray;
+}
+
+.Auto_Sell_Checkbox {
+    width: 18px;
+    height: 16px;
+    position: absolute;
+    margin-top: 3px;
+}
+
+.Auto_Sell_Text {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    margin-left: 26px;
+    color: white;
+}
+
+.Item_ProgressBar {
+    width: 100px;
+    height: 20px;
+    margin-top: 100px;
+    background: black;
+    position: absolute;
+    z-index: 3;
+    opacity: .5;
+    color: white;
+    text-align: center;
+    float: left;
+}
+
+.ProgressText {
+    width: 100px;
+    height: 20px;
+    z-index: 5;
+    opacity: 1;
+    color: white;
+    text-align: center;
+    float: left;
+    position: absolute;
+}
+
+.Progress {
+    width: 20px;
+    height: 20px;
+    background: red;
+    opacity: 1;
+    margin-top: 0px;
+    position: absolute;
+    z-index: 4;
+    float: left;
+}
+
+.Total_Growing {
+    font-size: 17px;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    margin-top: 140px;
+    background: saddlebrown;
+    color: white;
+}
+
+.Timer {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    float: left;
+    background: white;
+    z-index: 4;
+    margin-top: 160px;
+}
+
+.Time {
+    width: 0px;
+    height: 20px;
+    float: left;
+    position: absolute;
+    z-index: 5;
+    background: blue;
+    display: none;
+}
+
+.MiningClick > img {
+    width: 50px;
+    height: 50px;
+}
+
+.MiningClick {
+    z-index: 100;
+    left: 284px;
+}
+
+.MiningContainer {
+    position: absolute;
+    height: 783px;
+    background: white;
+    z-index: 80;
+    border-radius: 25px;
+    top: 24px;
+    width: 497px;
+    display: none;
+}
+
+body {
+    background: black;
+    background-size: 100%;
+    background-image: url("../img/background.jpg");
+}
+
+.ShowClickerMenu {
+    position: fixed;
+}
+
+.ClickerMenu {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+}
+
+.Animals_Inv {
+    color: blue;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Trees_Inv {
+    color: saddlebrown;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    margin-left: 9px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Fruits_Inv {
+    color: red;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Vegetables_Inv {
+    color: green;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Flowers_Inv {
+    color: purple;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Makers_Inv {
+    color: black;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.Minerals_Inv {
+    color: royalblue;
+    background: white;
+    width: 100%;
+    height: 54px;
+    clear: both;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0px;
+    line-height: 59px;
+}
+
+.ContainerContainer {
+    border: 1px solid transparent;
+    width: 313px;
+    height: 212px;
+    float: left;
+    margin: 5px;
+}
+
+.Selected {
+    border-color: white;
+}
+
+.Title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: -36px;
+}
+
+.TitleImg {
+    height: 173px;
+    width: 316px;
+    border-radius: 28px;
+}
+
+.PlantHowManyAtATime {
+    position: fixed;
+    right: 56px;
+    width: 57px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 15px 0px 0px 15px;
+    background: blue;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    z-index: 100;
+    top: 8px;
+}
+
+.HowMany {
+    color: black;
+    background: white;
+    border-radius: 0px 15px 15px 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: -41px;
+    top: 0px;
+    line-height: 40px;
+}
+
+.SellCrops {
+    position: fixed;
+    z-index: 101;
+    background: royalblue;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    height: 80%;
+    display: block;
+    background: white;
+    overflow-y: scroll;
+    border-radius: 10px;
+    border: 15px solid #3E5AF7;
+    display: none;
+}
+
+.UpgradeDirt {
+    position: fixed;
+    z-index: 101;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    height: 80%;
+    display: block;
+    overflow-y: scroll;
+    border-radius: 10px;
+    border: 15px solid saddlebrown;
+    display: none;
+    background: white;
+}
+
+.Upgrade_Dirt_Img {
+    float: left;
+    position: absolute;
+    border: 3px solid white;
+    top: -3px;
+    width: 152px;
+    height: 42px;
+    left: 107px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.ItemWrap {
+    position: relative;
+    float: left;
+    height: 50px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.Inventory_Item {
+    position: absolute;
+    width: 240px;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 15px;
+    text-indent: 35px;
+    border: 4px solid white;
+    color: black;
+    font-family: 'Dekko', cursive;
+    font-weight: 400;
+    left: 15px;
+    top: 15px;
+    font-size: 16px;
+    background: red;
+}
+
+.SellCrops .ItemImage, .UpgradeDirt>.ItemImage {
+    position: absolute;
+    z-index: 1001;
+    width: 35px;
+    height: 35px;
+    left: 15px;
+    top: 12px;
+}
+
+.ItemImage {
+    position: absolute;
+    z-index: 1001;
+    width: 35px;
+    height: 35px;
+    left: 15px;
+    top: 12px;
+}
+
+.AmountSpan {
+    position: absolute;
+    text-align: right;
+    right: 10px;
+}
+
+.Cost {
+    position: absolute;
+    text-align: right;
+    right: 10px;
+    opacity: 1;
+}
+
+.ShowUpgradeDirt {
+    position: fixed;
+    z-index: 10;
+    width: 118px;
+    height: 42px;
+    line-height: 41px;
+    text-align: center;
+    border-radius: 16px;
+    color: saddlebrown;
+    background: white;
+    margin-left: 5px;
+    border: 3px solid white;
+    top: 8px;
+    left: 5px;
+}
+
+.Name {
+    display: none;
+}
+
+.Buy_Better_Dirt {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.BackgroundContainer {
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.Money {
+    position: fixed;
+    z-index: 10;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 33px;
+    text-align: center;
+    color: royalblue;
+    background: white;
+    border-radius: 78px;
+    width: 174px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+.Item {
+    width: 100px;
+    height: 160px;
+    margin-right: 50px;
+    float: left;
+}
+
+.ItemContainer {
+    width: 300px;
+    float: left;
+    border: 6px solid blue;
+    border-radius: 4px;
+    margin: 0px;
+}
+
+.Canvas_Strawberry, .Canvas_Blueberry, .Canvas_Ancient_Fruit, .Canvas_Artichoke {
+    float: left;
+    margin-left: -50px;
+}
+
+.Item_Title {
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+    background: royalblue;
+    z-index: 3;
+    font-size: 12px;
+}
+
+.Item_Cost {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    background: white;
+    color: red;
+    position: absolute;
+    z-index: 3;
+    margin-top: 0px;
+    opacity: 1;
+    margin-top: 120px;
+}
+
+.Dirt, .Item_Image, .Dirt img, .Item_Image img {
+    width: 100px;
+    height: 100px;
+    margin-left: 0;
+    margin-top: 0px;
+}
+
+.Dirt {
+    float: left;
+    position: absolute;
+    z-index: 1;
+}
+
+.Item_Image {
+    float: left;
+    position: absolute;
+    z-index: 2;
+}
+
+.Auto_Sell {
+    width: 100px;
+    height: 20px;
+    margin-top: 100px;
+    position: absolute;
+    background: darkslategray;
+}
+
+.Auto_Sell_Checkbox {
+    width: 18px;
+    height: 16px;
+    position: absolute;
+    margin-top: 3px;
+}
+
+.Auto_Sell_Text {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    margin-left: 26px;
+    color: white;
+}
+
+.Item_ProgressBar {
+    width: 100px;
+    height: 20px;
+    margin-top: 100px;
+    background: black;
+    position: absolute;
+    z-index: 3;
+    opacity: .5;
+    color: white;
+    text-align: center;
+    float: left;
+}
+
+.ProgressText {
+    width: 100px;
+    height: 20px;
+    z-index: 5;
+    opacity: 1;
+    color: white;
+    text-align: center;
+    float: left;
+    position: absolute;
+}
+
+.Progress {
+    width: 20px;
+    height: 20px;
+    background: red;
+    opacity: 1;
+    margin-top: 0px;
+    position: absolute;
+    z-index: 4;
+    float: left;
+}
+
+.Total_Growing {
+    font-size: 17px;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    margin-top: 140px;
+    background: saddlebrown;
+    color: white;
+}
+
+.Timer {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    float: left;
+    background: white;
+    z-index: 4;
+    margin-top: 160px;
+}
+
+.Time {
+    width: 0px;
+    height: 20px;
+    float: left;
+    position: absolute;
+    z-index: 5;
+    background: blue;
+    display: none;
+}
+
+.Container {
+    display: none;
+}
