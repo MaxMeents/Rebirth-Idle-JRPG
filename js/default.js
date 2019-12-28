@@ -5,7 +5,7 @@ $(document).ready(function() {
     RunningBattleFarm = false;
     CurrentlyFighting = false;
     BuyIn = 50;
-    IntervalTimePoker = 0;
+    IntervalTimePoker = 1000;
     (function($) {
         $.rand = function(arg) {
             if ($.isArray(arg)) {
