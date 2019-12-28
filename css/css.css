@@ -48,8 +48,7 @@
 }
 
 .Poker {
-	left: 300px;
-	position: fixed;
+	position: absolute;
 	z-index: 1001;
 	width: 300px;
 	height: 400px;

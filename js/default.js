@@ -18,69 +18,70 @@ $(document).ready(function() {
         };
     })(jQuery);
 
-    EarnAmount_9 = 0;
-    EarnAmount_8 = 0;
-    EarnAmount_7 = 0;
-    EarnAmount_6 = 0;
-    EarnAmount_5 = 0;
-    EarnAmount_4 = 0;
-    EarnAmount_3 = 0;
-    EarnAmount_2 = 0;
-    EarnAmount_1 = 0;
+    function Poker() {
+        EarnAmount_9 = 0;
+        EarnAmount_8 = 0;
+        EarnAmount_7 = 0;
+        EarnAmount_6 = 0;
+        EarnAmount_5 = 0;
+        EarnAmount_4 = 0;
+        EarnAmount_3 = 0;
+        EarnAmount_2 = 0;
+        EarnAmount_1 = 0;
 
-    GamblingCard1_9 = 'NoCardaaa'
-    GamblingCard2_9 = 'NoCardaaa'
-    GamblingCard1_8 = 'NoCardaaa'
-    GamblingCard2_8 = 'NoCardaaa'
-    GamblingCard1_7 = 'NoCardaaa'
-    GamblingCard2_7 = 'NoCardaaa'
-    GamblingCard1_6 = 'NoCardaaa'
-    GamblingCard2_6 = 'NoCardaaa'
-    GamblingCard1_5 = 'NoCardaaa'
-    GamblingCard2_5 = 'NoCardaaa'
-    GamblingCard1_4 = 'NoCardaaa'
-    GamblingCard2_4 = 'NoCardaaa'
-    GamblingCard1_3 = 'NoCardaaa'
-    GamblingCard2_3 = 'NoCardaaa'
-    GamblingCard1_2 = 'NoCardaaa'
-    GamblingCard2_2 = 'NoCardaaa'
-    GamblingCard1_1 = 'NoCardaaa'
-    GamblingCard2_1 = 'NoCardaaa'
+        GamblingCard1_9 = 'NoCardaaa'
+        GamblingCard2_9 = 'NoCardaaa'
+        GamblingCard1_8 = 'NoCardaaa'
+        GamblingCard2_8 = 'NoCardaaa'
+        GamblingCard1_7 = 'NoCardaaa'
+        GamblingCard2_7 = 'NoCardaaa'
+        GamblingCard1_6 = 'NoCardaaa'
+        GamblingCard2_6 = 'NoCardaaa'
+        GamblingCard1_5 = 'NoCardaaa'
+        GamblingCard2_5 = 'NoCardaaa'
+        GamblingCard1_4 = 'NoCardaaa'
+        GamblingCard2_4 = 'NoCardaaa'
+        GamblingCard1_3 = 'NoCardaaa'
+        GamblingCard2_3 = 'NoCardaaa'
+        GamblingCard1_2 = 'NoCardaaa'
+        GamblingCard2_2 = 'NoCardaaa'
+        GamblingCard1_1 = 'NoCardaaa'
+        GamblingCard2_1 = 'NoCardaaa'
 
-    function RotateGamblingPokerCards(Card1, Card2, EarnAmount) {
-        //***RotateItemsGainedFarming(ItemGained)
-        GamblingCard1_9 = GamblingCard1_8;
-        GamblingCard1_8 = GamblingCard1_7;
-        GamblingCard1_7 = GamblingCard1_6;
-        GamblingCard1_6 = GamblingCard1_5;
-        GamblingCard1_5 = GamblingCard1_4;
-        GamblingCard1_4 = GamblingCard1_3;
-        GamblingCard1_3 = GamblingCard1_2;
-        GamblingCard1_2 = GamblingCard1_1;
-        GamblingCard1_1 = Card1;
+        function RotateGamblingPokerCards(Card1, Card2, EarnAmount) {
+            //***RotateItemsGainedFarming(ItemGained)
+            GamblingCard1_9 = GamblingCard1_8;
+            GamblingCard1_8 = GamblingCard1_7;
+            GamblingCard1_7 = GamblingCard1_6;
+            GamblingCard1_6 = GamblingCard1_5;
+            GamblingCard1_5 = GamblingCard1_4;
+            GamblingCard1_4 = GamblingCard1_3;
+            GamblingCard1_3 = GamblingCard1_2;
+            GamblingCard1_2 = GamblingCard1_1;
+            GamblingCard1_1 = Card1;
 
-        GamblingCard2_9 = GamblingCard2_8;
-        GamblingCard2_8 = GamblingCard2_7;
-        GamblingCard2_7 = GamblingCard2_6;
-        GamblingCard2_6 = GamblingCard2_5;
-        GamblingCard2_5 = GamblingCard2_4;
-        GamblingCard2_4 = GamblingCard2_3;
-        GamblingCard2_3 = GamblingCard2_2;
-        GamblingCard2_2 = GamblingCard2_1;
-        GamblingCard2_1 = Card2;
+            GamblingCard2_9 = GamblingCard2_8;
+            GamblingCard2_8 = GamblingCard2_7;
+            GamblingCard2_7 = GamblingCard2_6;
+            GamblingCard2_6 = GamblingCard2_5;
+            GamblingCard2_5 = GamblingCard2_4;
+            GamblingCard2_4 = GamblingCard2_3;
+            GamblingCard2_3 = GamblingCard2_2;
+            GamblingCard2_2 = GamblingCard2_1;
+            GamblingCard2_1 = Card2;
 
-        EarnAmount_9 = EarnAmount_8;
-        EarnAmount_8 = EarnAmount_7;
-        EarnAmount_7 = EarnAmount_6;
-        EarnAmount_6 = EarnAmount_5;
-        EarnAmount_5 = EarnAmount_4;
-        EarnAmount_4 = EarnAmount_3;
-        EarnAmount_3 = EarnAmount_2;
-        EarnAmount_2 = EarnAmount_1;
-        EarnAmount_1 = EarnAmount;
-    }
-    CurrencyZenny = 5000;
-    setInterval(function() {
+            EarnAmount_9 = EarnAmount_8;
+            EarnAmount_8 = EarnAmount_7;
+            EarnAmount_7 = EarnAmount_6;
+            EarnAmount_6 = EarnAmount_5;
+            EarnAmount_5 = EarnAmount_4;
+            EarnAmount_4 = EarnAmount_3;
+            EarnAmount_3 = EarnAmount_2;
+            EarnAmount_2 = EarnAmount_1;
+            EarnAmount_1 = EarnAmount;
+        }
+        CurrencyZenny = 5000;
+        setInterval(function() {
             PairOfa = 0;
             PairOfk = 0;
             PairOfq = 0;
@@ -229,8 +230,9 @@ $(document).ready(function() {
             $('.Hand1').find(".Card2").attr("src", "img/" + GamblingCard2_1 + ".jpg")
             $('.HandStats.Hand1').html(EarnAmount_1)
         }, IntervalTimePoker)
-        /*Game Created 12/22/2019*/
-        /*
+    }
+    /*Game Created 12/22/2019*/
+    /*
     Rebirth
     Skill Points 
     On Rebirth Unlock Skill Points and reset variables
@@ -306,125 +308,57 @@ $(document).ready(function() {
             clearInterval(IntervalSecondPanel);
         }
         IntervalSecondPanel = setInterval(function() {
+            console.log('running interval second panel')
             RunningSecondPanel = true
             SecondPanel();
         }, IntervalTimeSecondPanel)
     }
 
     function RebirthInit() {
+        Options = ["MainLevel", "Battle", "Mining", "Farming", "TreeCutting", "Gathering", "Digging", "Forging", "Sewing", "Apothecary", "Alchemy", "Jewellery", "AnimalHusbandry"];
+        UnlockedList = ["Farming", "Music", "Forest", "Gathering", "Mining", "BattleArea", "UndergroundCity", "Farm", "SlimeArea"]
+        IntervalNames = ["BattleFarm", "MiningUndergroundCity", "GatheringForest"];
+
+        i = 0;
+        while (i < Options.length) {
+            o = Options[i];
+            window["SkillPointsRebirth" + o] = 0;
+            i++
+        }
         SkillPointsRebirthMainLevel = 2500;
-        SkillPointsRebirthBattle = 100;
-        SkillPointsRebirthMining = 0;
-        SkillPointsRebirthFarming = 0;
-        SkillPointsRebirthTreeCutting = 0;
-        SkillPointsRebirthGathering = 0;
-        SkillPointsRebirthDigging = 0;
-        SkillPointsRebirthForging = 0;
-        SkillPointsRebirthSewing = 0;
-        SkillPointsRebirthApothecary = 0;
-        SkillPointsRebirthAlchemy = 0;
-        SkillPointsRebirthJewellery = 0;
-        SkillPointsRebirthAnimalHusbandry = 0;
         VarItemsAmount_PheonixDownRebirth = 10;
         //***Locked Variables
         //***Lock Farming until unlocked by rebirth skill point purchase
-        FarmingUnlocked = false
-        UnlockFarming = "Unlock Farming"
-        NameFarming = "Locked: Farming"
-            //***Lock Music until unlocked by rebirth skill point purchase
-        MusicUnlocked = false
-        UnlockMusic = "Unlock Music"
-        NameMusic = "Locked: Music"
-            //***Lock Forest until unlocked by rebirth skill point purchase
-        ForestUnlocked = false
-        UnlockForest = "Unlock Forest"
-        NameForest = "Locked: Forest"
-            //***Lock Gathering until unlocked by rebirth skill point purchase
-        GatheringUnlocked = false
-        UnlockGathering = "Unlock Gathering"
-        NameGathering = "Locked: Gathering"
-            //***Lock Mining until unlocked by rebirth skill point purchase
-        MiningUnlocked = false
-        UnlockMining = "Unlock Mining"
-        NameMining = "Locked: Mining"
-            //***Lock Battle until unlocked by rebirth skill point purchase
-        BattleAreaUnlocked = false
-        UnlockBattleArea = "Unlock Battle"
-        NameBattleArea = "Locked: Battle"
-            //***Lock Underground City until unlocked by rebirth skill point purchase
-        UndergroundCityUnlocked = false
-        UnlockUndergroundCity = "Unlock Underground City"
-        NameUndergroundCity = "Locked: Underground City"
-            //***Lock Farm until unlocked by rebirth skill point purchase
-        FarmUnlocked = false
-        UnlockFarm = "Unlock Farm"
-        NameFarm = "Locked: Farm"
+        i = 0;
+        while (i < UnlockedList.length) {
+            o = UnlockedList[i];
+            window[o + "Unlocked"] = false
+            window["Unlock" + o] = "Unlock " + o
+            window["Name" + o] = "Locked: " + o
 
-        SlimeAreaUnlocked = false
-        UnlockSlimeArea = "Unlock Slime Area"
-        NameSlimeArea = "Locked: Slime Area"
+
+            i++
+        }
     }; //Do not Place Inside FunctionInit
     function Rebirth() {
         //***Rebirth()
-        //***Unlock In Rebirth
-        //***Unlock Farming in Rebirth
-        if (FarmingUnlocked == true) {
-            NameFarming = "Farming"
-            UnlockFarming = "Farming Unlocked"
-        }
-        //***Unlock Music in Rebirth
-        if (MusicUnlocked == true) {
-            NameMusic = "Music"
-            UnlockMusic = "Music Unlocked"
-        }
-        //***Unlock Forest in Rebirth
-        if (ForestUnlocked == true) {
-            NameForest = "Forest"
-            UnlockForest = "Forest Unlocked"
-        }
-        //***Unlock Gathering in Rebirth
-        if (GatheringUnlocked == true) {
-            NameGathering = "Gathering"
-            UnlockGathering = "Gathering Unlocked"
-        }
-        //***Unlock Mining in Rebirth
-        if (MiningUnlocked == true) {
-            NameMining = "Mining"
-            UnlockMining = "Mining Unlocked"
-        }
-        //***Unlock Battle in Rebirth
-        if (BattleAreaUnlocked == true) {
-            NameBattleArea = "Battle"
-            UnlockBattleArea = "Battle Unlocked"
-        }
-        //***Unlock Underground City in Rebirth
-        if (UndergroundCityUnlocked == true) {
-            NameUndergroundCity = "Underground City"
-            UnlockUndergroundCity = "Underground City Unlocked"
-        }
-        //***Unlock Farm in Rebirth
-        if (FarmUnlocked == true) {
-            NameFarm = "Farm"
-            UnlockFarm = "Farm Unlocked"
-        }
+        i = 0;
+        while (i < UnlockedList.length) {
+            o = UnlockedList[i];
+            if (window[o + "Unlocked"] == true) {
+                window["Name" + o] = o;
+                window["Unlock" + o] = o + " Unlocked"
+            }
 
-        if (SlimeAreaUnlocked == true) {
-            NameSlimeArea = "Slime Area"
-            UnlockSlimeArea = "Slime Area Unlocked"
+
+            i++
         }
-        SkillPointsRebirthMainLevel += Math.ceil(SkillPointsMainLevel);
-        SkillPointsRebirthBattle += Math.ceil(SkillPointsBattle);
-        SkillPointsRebirthMining += Math.ceil(SkillPointsMining);
-        SkillPointsRebirthFarming += Math.ceil(SkillPointsFarming);
-        SkillPointsRebirthTreeCutting += Math.ceil(SkillPointsTreeCutting);
-        SkillPointsRebirthGathering += Math.ceil(SkillPointsGathering);
-        SkillPointsRebirthDigging += Math.ceil(SkillPointsDigging);
-        SkillPointsRebirthForging += Math.ceil(SkillPointsForging);
-        SkillPointsRebirthSewing += Math.ceil(SkillPointsSewing);
-        SkillPointsRebirthApothecary += Math.ceil(SkillPointsApothecary);
-        SkillPointsRebirthAlchemy += Math.ceil(SkillPointsAlchemy);
-        SkillPointsRebirthJewellery += Math.ceil(SkillPointsJewellery);
-        SkillPointsRebirthAnimalHusbandry += Math.ceil(SkillPointsAnimalHusbandry);
+        i = 0;
+        while (i < Options.length) {
+            o = Options[i];
+            window["SkillPointsRebirth" + o] += Math.ceil(window["SkillPoints" + o]);
+            i++
+        }
     }
 
     function FunctionInit() {
@@ -456,11 +390,12 @@ $(document).ready(function() {
                     StatusAliveOrDead = "Alive"
                 }
             }
-            ItemMultiplierBattle = getRandomInt(ItemMultiplierBattleMin, ItemMultiplierBattleMax);
-            ItemMultiplierMining = getRandomInt(ItemMultiplierMiningMin, ItemMultiplierMiningMax);
-            ItemMultiplierTreeCutting = getRandomInt(ItemMultiplierTreeCuttingMin, ItemMultiplierTreeCuttingMax);
-            ItemMultiplierFarming = getRandomInt(ItemMultiplierFarmingMin, ItemMultiplierFarmingMax);
-            ItemMultiplierGathering = getRandomInt(ItemMultiplierGatheringMin, ItemMultiplierGatheringMax);
+            i = 0;
+            while (i < Options.length) {
+                o = Options[i];
+                window["ItemMultiplier" + o] = getRandomInt(window["ItemMultiplier" + o + "Min"], window["ItemMultiplier" + o + "Max"]);
+                i++
+            }
             FunctionLevelUp();
         }, 50);
 
@@ -506,86 +441,19 @@ $(document).ready(function() {
     function FunctionLevelUp() {
         //***FunctionLevelUp()
         if (StatsHealthCurrent > 0) {
+            var i = 0;
+            while (i < Options.length) {
+                s = Options[i]
+                if (window["Exp" + s] >= window["ExpTNL" + s]) {
+                    window["Level" + s] += 1;
+                    window["SkillPoints" + s] += 1 + window["SkillPoints" + s] / 5;
+                    window["Exp" + s] -= window["ExpTNL" + s];
+                    window["ExpTNL" + s] = window["ExpTNL" + Option + i] * 1.2;
+                }
+                i++
+            }
 
 
-            if (ExpMainLevel >= ExpTNLMainLevel) {
-                LevelMainLevel += 1;
-                SkillPointsMainLevel += 1 + SkillPointsMainLevel / 5;
-                ExpMainLevel -= ExpTNLMainLevel;
-                ExpTNLMainLevel = ExpTNLMainLevel * 1.2;
-            }
-            if (ExpBattle >= ExpTNLBattle) {
-                LevelBattle += 1;
-                SkillPointsBattle += 1 + SkillPointsBattle / 5;
-                ExpBattle -= ExpTNLBattle;
-                ExpTNLBattle = ExpTNLBattle * 1.2;
-            }
-            if (ExpMining >= ExpTNLMining) {
-                LevelMining += 1;
-                SkillPointsMining += 1 + SkillPointsMining / 5;
-                ExpMining -= ExpTNLMining;
-                ExpTNLMining = ExpTNLMining * 1.2;
-            }
-            if (ExpFarming >= ExpTNLFarming) {
-                LevelFarming += 1;
-                SkillPointsFarming += 1 + SkillPointsFarming / 5;
-                ExpFarming -= ExpTNLFarming;
-                ExpTNLFarming = ExpTNLFarming * 1.2;
-            }
-            if (ExpTreeCutting >= ExpTNLTreeCutting) {
-                LevelTreeCutting += 1;
-                SkillPointsTreeCutting += 1 + SkillPointsTreeCutting / 5;
-                ExpTreeCutting -= ExpTNLTreeCutting;
-                ExpTNLTreeCutting = ExpTNLTreeCutting * 1.2;
-            }
-            if (ExpGathering >= ExpTNLGathering) {
-                LevelGathering += 1;
-                SkillPointsGathering += 1 + SkillPointsGathering / 5;
-                ExpGathering -= ExpTNLGathering;
-                ExpTNLGathering = ExpTNLGathering * 1.2;
-            }
-            if (ExpDigging >= ExpTNLDigging) {
-                LevelDigging += 1;
-                SkillPointsDigging += 1 + SkillPointsDigging / 5;
-                ExpDigging -= ExpTNLDigging;
-                ExpTNLDigging = ExpTNLDigging * 1.2;
-            }
-            if (ExpForging >= ExpTNLForging) {
-                LevelForging += 1;
-                SkillPointsForging += 1 + SkillPointsForging / 5;
-                ExpForging -= ExpTNLForging;
-                ExpTNLForging = ExpTNLForging * 1.2;
-            }
-            if (ExpSewing >= ExpTNLSewing) {
-                LevelSewing += 1;
-                SkillPointsSewing += 1 + SkillPointsSewing / 5;
-                ExpSewing -= ExpTNLSewing;
-                ExpTNLSewing = ExpTNLSewing * 1.2;
-            }
-            if (ExpApothecary >= ExpTNLApothecary) {
-                LevelApothecary += 1;
-                SkillPointsApothecary += 1 + SkillPointsApothecary / 5;
-                ExpApothecary -= ExpTNLApothecary;
-                ExpTNLApothecary = ExpTNLApothecary * 1.2;
-            }
-            if (ExpAlchemy >= ExpTNLAlchemy) {
-                LevelAlchemy += 1;
-                SkillPointsAlchemy += 1 + SkillPointsAlchemy / 5;
-                ExpAlchemy -= ExpTNLAlchemy;
-                ExpTNLAlchemy = ExpTNLAlchemy * 1.2;
-            }
-            if (ExpJewellery >= ExpTNLJewellery) {
-                LevelJewellery += 1;
-                SkillPointsJewellery += 1 + SkillPointsJewellery / 5;
-                ExpJewellery -= ExpTNLJewellery;
-                ExpTNLJewellery = ExpTNLJewellery * 1.2;
-            }
-            if (ExpAnimalHusbandry >= ExpTNLAnimalHusbandry) {
-                LevelAnimalHusbandry += 1;
-                SkillPointsAnimalHusbandry += 1 + SkillPointsAnimalHusbandry / 5;
-                ExpAnimalHusbandry -= ExpTNLAnimalHusbandry;
-                ExpTNLAnimalHusbandry = ExpTNLAnimalHusbandry * 1.2;
-            }
         }
 
     }
@@ -611,35 +479,33 @@ $(document).ready(function() {
         PotionsHasteInUseNow = false;
         //***IntervalTimes
 
-        IntervalTimeSecondPanel = 50;
+        IntervalTimeSecondPanel = 5000;
         IntervalTimeGatheringForest = 500;
         IntervalTimeMiningUndergroundCity = 750;
         IntervalTimeBattleFarm = 250;
         RunningSecondPanel = false;
-        RunningGatheringForest = false;
-        RunningMiningUndgroundCity = false;
+
+        while (v < IntervalNames.length) {
+            o = IntervalNames[v];
+            window["Running" + o] = false;
+            v++
+        }
         //***Haste Speed
-        HasteLvL1Speed = 4;
-        HasteLvL2Speed = 5;
-        HasteLvL3Speed = 7;
-        HasteLvL4Speed = 10;
-        HasteLvL5Speed = 15;
+        HasteLvL1Speed = 1.5;
         //***Haste Set Speed
-        IntervalTimeGatheringForestHasteLvL1 = IntervalTimeGatheringForest / HasteLvL1Speed;
-        IntervalTimeBattleFarmHasteLvL1 = IntervalTimeBattleFarm / HasteLvL1Speed;
-        IntervalTimeMiningUndergroundCityHasteLvL1 = IntervalTimeMiningUndergroundCity / HasteLvL1Speed;
-        IntervalTimeGatheringForestHasteLvL2 = IntervalTimeGatheringForest / HasteLvL2Speed;
-        IntervalTimeBattleFarmHasteLvL2 = IntervalTimeBattleFarm / HasteLvL2Speed;
-        IntervalTimeMiningUndergroundCityHasteLvL2 = IntervalTimeMiningUndergroundCity / HasteLvL2Speed;
-        IntervalTimeGatheringForestHasteLvL3 = IntervalTimeGatheringForest / HasteLvL3Speed;
-        IntervalTimeBattleFarmHasteLvL3 = IntervalTimeBattleFarm / HasteLvL3Speed;
-        IntervalTimeMiningUndergroundCityHasteLvL3 = IntervalTimeMiningUndergroundCity / HasteLvL3Speed;
-        IntervalTimeGatheringForestHasteLvL4 = IntervalTimeGatheringForest / HasteLvL4Speed;
-        IntervalTimeBattleFarmHasteLvL4 = IntervalTimeBattleFarm / HasteLvL4Speed;
-        IntervalTimeMiningUndergroundCityHasteLvL4 = IntervalTimeMiningUndergroundCity / HasteLvL4Speed;
-        IntervalTimeGatheringForestHasteLvL5 = IntervalTimeGatheringForest / HasteLvL5Speed;
-        IntervalTimeBattleFarmHasteLvL5 = IntervalTimeBattleFarm / HasteLvL5Speed;
-        IntervalTimeMiningUndergroundCityHasteLvL5 = IntervalTimeMiningUndergroundCity / HasteLvL5Speed;
+
+
+        i = 1;
+        v = 0;
+        while (i <= 5) {
+            window["HasteLvL" + i + "Speed"] = HasteLvL1Speed * i;
+            while (v < IntervalNames.length) {
+                o = IntervalNames[v];
+                window["IntervalTime" + o + "HasteLvL" + i] = window["IntervalTime" + o] / window["HasteLvL" + i + "Speed"];
+                v++
+            }
+            i++
+        }
 
         Buy = false;
         Sell = false;
@@ -649,131 +515,35 @@ $(document).ready(function() {
         StatsHealthCurrent = 200;
         StatsMP = 25;
         PlayerDamage = 5
-        LevelMainLevel = 1;
-        ExpMainLevel = 0;
-        ExpTNLMainLevel = 10;
-        LevelBattle = 1;
-        ExpBattle = 0;
-        ExpTNLBattle = 10;
-        LevelMining = 1;
-        ExpMining = 0;
-        ExpTNLMining = 10;
-        LevelFarming = 1;
-        ExpFarming = 0;
-        ExpTNLFarming = 10;
-        LevelTreeCutting = 1;
-        ExpTreeCutting = 0;
-        ExpTNLTreeCutting = 10;
-        LevelGathering = 1;
-        ExpGathering = 0;
-        ExpTNLGathering = 10;
-        LevelDigging = 1;
-        ExpDigging = 0;
-        ExpTNLDigging = 10;
-        LevelForging = 1;
-        ExpForging = 0;
-        ExpTNLForging = 10;
-        LevelSewing = 1;
-        ExpSewing = 0;
-        ExpTNLSewing = 10;
-        LevelApothecary = 1;
-        ExpApothecary = 0;
-        ExpTNLApothecary = 10;
-        LevelAlchemy = 1;
-        ExpAlchemy = 0;
-        ExpTNLAlchemy = 10;
-        LevelJewellery = 1;
-        ExpJewellery = 0;
-        ExpTNLJewellery = 10;
-        LevelAnimalHusbandry = 1;
-        ExpAnimalHusbandry = 0;
-        ExpTNLAnimalHusbandry = 10;
+
+        NumOfOptions = 13;
+        console.log('Running')
+        var i = 0;
+        while (i < Options.length) {
+            s = Options[i]
+            window["Level" + s] = 1;
+            window["Exp" + s] = 0;
+            window["ExpTNL" + s] = 10;
+            window["SkillPoints" + s] = 0;
+            window["ItemMultiplier" + s] = 1
+            window["ItemMultiplier" + s + "Min"] = 1
+            window["ItemMultiplier" + s + "Max"] = 5
+            var v = 1;
+            while (v <= 9) {
+                window["GainedItem" + s + v] = 0
+                v++
+            }
+            i++
+        }
+
         //***Currency Starting Variables
         Rupees = 0;
         //***Variables Skill Points
-        SkillPointsMainLevel = 0;
-        SkillPointsBattle = 0;
-        SkillPointsMining = 0;
-        SkillPointsFarming = 0;
-        SkillPointsTreeCutting = 0;
-        SkillPointsGathering = 0;
-        SkillPointsDigging = 0;
-        SkillPointsForging = 0;
-        SkillPointsSewing = 0;
-        SkillPointsApothecary = 0;
-        SkillPointsAlchemy = 0;
-        SkillPointsJewellery = 0;
-        SkillPointsAnimalHusbandry = 0;
-
 
         //***GainedItem Variables
-        GainedItemBattle1 = "none";
-        GainedItemBattle2 = "none";
-        GainedItemBattle3 = "none";
-        GainedItemBattle4 = "none";
-        GainedItemBattle5 = "none";
-        GainedItemBattle6 = "none";
-        GainedItemBattle7 = "none";
-        GainedItemBattle8 = "none";
-        GainedItemBattle9 = "none";
 
-        GainedItemMining1 = "none";
-        GainedItemMining2 = "none";
-        GainedItemMining3 = "none";
-        GainedItemMining4 = "none";
-        GainedItemMining5 = "none";
-        GainedItemMining6 = "none";
-        GainedItemMining7 = "none";
-        GainedItemMining8 = "none";
-        GainedItemMining9 = "none";
-
-        GainedItemTreeCutting1 = "none";
-        GainedItemTreeCutting2 = "none";
-        GainedItemTreeCutting3 = "none";
-        GainedItemTreeCutting4 = "none";
-        GainedItemTreeCutting5 = "none";
-        GainedItemTreeCutting6 = "none";
-        GainedItemTreeCutting7 = "none";
-        GainedItemTreeCutting8 = "none";
-        GainedItemTreeCutting9 = "none";
-
-        GainedItemGathering1 = 'none';
-        GainedItemGathering2 = 'none';
-        GainedItemGathering3 = 'none';
-        GainedItemGathering4 = 'none';
-        GainedItemGathering5 = 'none';
-        GainedItemGathering6 = 'none';
-        GainedItemGathering7 = 'none';
-        GainedItemGathering8 = 'none';
-        GainedItemGathering9 = 'none';
-
-        GainedItemFarming1 = "none";
-        GainedItemFarming2 = "none";
-        GainedItemFarming3 = "none";
-        GainedItemFarming4 = "none";
-        GainedItemFarming5 = "none";
-        GainedItemFarming6 = "none";
-        GainedItemFarming7 = "none";
-        GainedItemFarming8 = "none";
-        GainedItemFarming9 = "none";
         //***Item Multiplier is Set by function of min and max
-        ItemMultiplierBattle = 1;
-        ItemMultiplierMining = 1;
-        ItemMultiplierTreeCutting = 1;
-        ItemMultiplierFarming = 1;
-        //***Item Multiplier Min
-        ItemMultiplierBattleMin = 1;
-        ItemMultiplierMiningMin = 1;
-        ItemMultiplierTreeCuttingMin = 1;
-        ItemMultiplierFarmingMin = 1;
-        ItemMultiplierGatheringMin = 1;
 
-        //***Item Multiplier Max
-        ItemMultiplierBattleMax = 5;
-        ItemMultiplierMiningMax = 5;
-        ItemMultiplierTreeCuttingMax = 5;
-        ItemMultiplierFarmingMax = 5;
-        ItemMultiplierGatheringMax = 10;
         //***Minerals and Terrain Amount
         //***Wood Variables
         //***Wood Amount
@@ -794,7 +564,7 @@ $(document).ready(function() {
         VarTreeCuttingAmount_DemonLog = 0;
         VarTreeCuttingAmount_AngelLog = 0;
         VarTreeCuttingAmount_BloodyLog = 0;
-        VarTreeCuttingAmount_YggdrasilTwig = 0;
+
         VarTreeCuttingAmount_YggdrasilLog = 0;
         //***Wood Names
         VarTreeCuttingName_CedarLog = "Cedar Log";
@@ -814,7 +584,7 @@ $(document).ready(function() {
         VarTreeCuttingName_DemonLog = "Demon Log";
         VarTreeCuttingName_AngelLog = "Angel Log";
         VarTreeCuttingName_BloodyLog = "Bloody Log";
-        VarTreeCuttingName_YggdrasilTwig = "Yggdrasil Twig";
+
         VarTreeCuttingName_YggdrasilLog = "Yggdrasil Log";
         //***Wood Prices
         VarTreeCuttingPrice_CedarLog = 1;
@@ -834,7 +604,7 @@ $(document).ready(function() {
         VarTreeCuttingPrice_DemonLog = 275000;
         VarTreeCuttingPrice_AngelLog = 350000;
         VarTreeCuttingPrice_BloodyLog = 475000;
-        VarTreeCuttingPrice_YggdrasilTwig = 1000000;
+
         VarTreeCuttingPrice_YggdrasilLog = 25000000;
         //***Wood Exp
         VarTreeCuttingExp_CedarLog = 0;
@@ -854,7 +624,7 @@ $(document).ready(function() {
         VarTreeCuttingExp_DemonLog = 0;
         VarTreeCuttingExp_AngelLog = 0;
         VarTreeCuttingExp_BloodyLog = 0;
-        VarTreeCuttingExp_YggdrasilTwig = 0;
+
         VarTreeCuttingExp_YggdrasilLog = 0;
         //***Digging Amount
         VarDiggingAmount_Dirt = 0;
@@ -1199,7 +969,7 @@ $(document).ready(function() {
 
     function OnDocumentResize() {
         //***OnDocumentResize()
-        $(document).resize(function() {
+        $(window).resize(function() {
 
             //RealignBackground = RBG
             FunctionCenterStage();
@@ -1499,7 +1269,7 @@ $(document).ready(function() {
                     <br>You Will Unlock 
                     <br>the Following Skill Points
                     <br>
-                    <br>${Math.ceil(SkillPointsMainLevel)} MainLevel
+                    <br>${Math.ceil(SkillPointsMainLevel)} Main Level
                     <br>${Math.ceil(SkillPointsBattle)} Battle
                     <br>${Math.ceil(SkillPointsMining)} Mining
                     <br>${Math.ceil(SkillPointsFarming)} Farming
