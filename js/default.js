@@ -1,11 +1,5 @@
 $(document).ready(function() {
-    RunningGatheringForest = false;
-    RunningMiningUndgroundCity = false;
-    RunningInitInterval = false;
-    RunningBattleFarm = false;
-    CurrentlyFighting = false;
-    BuyIn = 50;
-    IntervalTimePoker = 1000;
+    NumberOfTurnsAtOnce = 1;
     (function($) {
         $.rand = function(arg) {
             if ($.isArray(arg)) {
@@ -17,6 +11,370 @@ $(document).ready(function() {
             }
         };
     })(jQuery);
+    //Hide Fishing
+    $('.Fishing').hide()
+
+    function ShowItemsGained(ItemImgDirVar, AmountOfItem) {
+        ww = $(window).width()
+        wh = $(window).height()
+        fl = getRandomArbitrary(0, ww - 50)
+        ft = getRandomArbitrary(0, wh - 50)
+        console.log('ShowItemsGained is Running')
+        $('<img class="GainedItem" src="' + ItemImgDirVar + '">').appendTo('body').css({
+            top: ft,
+            left: fl
+        }).animate({
+            opacity: 0,
+            top: "-=50",
+
+        }, 3000, function() {
+            $(this).remove()
+        });
+        $('<div class="ShowNumberOfItems">' + shortenNumber(AmountOfItem) + '</div>').appendTo('body').css({
+            top: ft,
+            left: fl + 50
+        }).animate({
+            opacity: 0,
+            top: "-=50",
+
+        }, 3000, function() {
+            $(this).remove()
+        });
+    }
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+    RunningGatheringForest = false;
+    RunningMiningUndgroundCity = false;
+    RunningInitInterval = false;
+    RunningBattleFarm = false;
+    CurrentlyFighting = false;
+    BuyIn = 50
+    IntervalTimePoker = 1000;
+    GainedItemFishingOcean9 = "none"
+    GainedItemFishingOcean8 = "none"
+    GainedItemFishingOcean7 = "none"
+    GainedItemFishingOcean6 = "none"
+    GainedItemFishingOcean5 = "none"
+    GainedItemFishingOcean4 = "none"
+    GainedItemFishingOcean3 = "none"
+    GainedItemFishingOcean2 = "none"
+    GainedItemFishingOcean1 = "none"
+
+    function RotateFishingOcean(Fish) {
+        //***RotateItemsGainedFarming(ItemGained)
+        GainedItemFishingOcean9 = GainedItemFishingOcean8;
+        GainedItemFishingOcean8 = GainedItemFishingOcean7;
+        GainedItemFishingOcean7 = GainedItemFishingOcean6;
+        GainedItemFishingOcean6 = GainedItemFishingOcean5;
+        GainedItemFishingOcean5 = GainedItemFishingOcean4;
+        GainedItemFishingOcean4 = GainedItemFishingOcean3;
+        GainedItemFishingOcean3 = GainedItemFishingOcean2;
+        GainedItemFishingOcean2 = GainedItemFishingOcean1;
+        GainedItemFishingOcean1 = Fish;
+
+
+    }
+    VarFishing_RedMullet = 0;
+    VarFishing_RedSnapper = 0;
+    VarFishing_Salmon = 0;
+    VarFishing_Sandfish = 0;
+    VarFishing_Sardine = 0;
+    VarFishing_ScorpionCarp = 0;
+    VarFishing_SeaCucumber = 0;
+    VarFishing_Seaweed = 0;
+    VarFishing_Shad = 0;
+    VarFishing_Shrimp = 0;
+    VarFishing_Slimejack = 0;
+    VarFishing_SmallmouthBass = 0;
+    VarFishing_Snail = 0;
+    VarFishing_SpookFish = 0;
+    VarFishing_Squid = 0;
+    VarFishing_Stonefish = 0;
+    VarFishing_Sturgeon = 0;
+    VarFishing_Sunfish = 0;
+    VarFishing_SuperCucumber = 0;
+    VarFishing_TigerTrout = 0;
+    VarFishing_Tilapia = 0;
+    VarFishing_Tuna = 0;
+    VarFishing_VoidSalmon = 0;
+    VarFishing_Walleye = 0;
+    VarFishing_WhiteAlgae = 0;
+    VarFishing_Woodskip = 0;
+    VarFishing_Albacore = 0;
+    VarFishing_Anchovy = 0;
+    VarFishing_Angler = 0;
+    VarFishing_Blobfish = 0;
+    VarFishing_Bream = 0;
+    VarFishing_Bullhead = 0;
+    VarFishing_Carp = 0;
+    VarFishing_Catfish = 0;
+    VarFishing_Chub = 0;
+    VarFishing_Clam = 0;
+    VarFishing_Cockle = 0;
+    VarFishing_Crab = 0;
+    VarFishing_Crayfish = 0;
+    VarFishing_Crimsonfish = 0;
+    VarFishing_Dorado = 0;
+    VarFishing_Eel = 0;
+    VarFishing_Flounder = 0;
+    VarFishing_Ghostfish = 0;
+    VarFishing_Glacierfish = 0;
+    VarFishing_GreenAlgae = 0;
+    VarFishing_Halibut = 0;
+    VarFishing_Herring = 0;
+    VarFishing_IcePip = 0;
+    VarFishing_LargemouthBass = 0;
+    VarFishing_LavaEel = 0;
+    VarFishing_Legend = 0;
+    VarFishing_Lingcod = 0;
+    VarFishing_Lobster = 0;
+    VarFishing_MidnightCarp = 0;
+    VarFishing_MidnightSquid = 0;
+    VarFishing_Mussel = 0;
+    VarFishing_MutantCarp = 0;
+    VarFishing_Octopus = 0;
+    VarFishing_Oyster = 0;
+    VarFishing_Perch = 0;
+    VarFishing_Periwinkle = 0;
+    VarFishing_Pike = 0;
+    VarFishing_Pufferfish = 0;
+    VarFishing_Rain = 0;
+    VarFishing_RainbowTrout = 0;
+    VarFishingName_RedMullet = "Red Mullet"
+    VarFishingName_RedSnapper = "Red Snapper"
+    VarFishingName_Salmon = "Salmon"
+    VarFishingName_Sandfish = "Sandfish"
+    VarFishingName_Sardine = "Sardine"
+    VarFishingName_ScorpionCarp = "Scorpion Carp"
+    VarFishingName_SeaCucumber = "Sea Cucumber"
+    VarFishingName_Seaweed = "Seaweed"
+    VarFishingName_Shad = "Shad"
+    VarFishingName_Shrimp = "Shrimp"
+    VarFishingName_Slimejack = "Slimejack"
+    VarFishingName_SmallmouthBass = "Smallmouth Bass"
+    VarFishingName_Snail = "Snail"
+    VarFishingName_SpookFish = "Spook Fish"
+    VarFishingName_Squid = "Squid"
+    VarFishingName_Stonefish = "Stonefish"
+    VarFishingName_Sturgeon = "Sturgeon"
+    VarFishingName_Sunfish = "Sunfish"
+    VarFishingName_SuperCucumber = "Super Cucumber"
+    VarFishingName_TigerTrout = "Tiger Trout"
+    VarFishingName_Tilapia = "Tilapia"
+    VarFishingName_Tuna = "Tuna"
+    VarFishingName_VoidSalmon = "Void Salmon"
+    VarFishingName_Walleye = "Walleye"
+    VarFishingName_WhiteAlgae = "White Algae"
+    VarFishingName_Woodskip = "Woodskip"
+    VarFishingName_Albacore = "Albacore"
+    VarFishingName_Anchovy = "Anchovy"
+    VarFishingName_Angler = "Angler"
+    VarFishingName_Blobfish = "Blobfish"
+    VarFishingName_Bream = "Bream"
+    VarFishingName_Bullhead = "Bullhead"
+    VarFishingName_Carp = "Carp"
+    VarFishingName_Catfish = "Catfish"
+    VarFishingName_Chub = "Chub"
+    VarFishingName_Clam = "Clam"
+    VarFishingName_Cockle = "Cockle"
+    VarFishingName_Crab = "Crab"
+    VarFishingName_Crayfish = "Crayfish"
+    VarFishingName_Crimsonfish = "Crimsonfish"
+    VarFishingName_Dorado = "Dorado"
+    VarFishingName_Eel = "Eel"
+    VarFishingName_Flounder = "Flounder"
+    VarFishingName_Ghostfish = "Ghostfish"
+    VarFishingName_Glacierfish = "Glacierfish"
+    VarFishingName_GreenAlgae = "Green Algae"
+    VarFishingName_Halibut = "Halibut"
+    VarFishingName_Herring = "Herring"
+    VarFishingName_IcePip = "Ice Pip"
+    VarFishingName_LargemouthBass = "Largemouth Bass"
+    VarFishingName_LavaEel = "Lava Eel"
+    VarFishingName_Legend = "Legend"
+    VarFishingName_Lingcod = "Lingcod"
+    VarFishingName_Lobster = "Lobster"
+    VarFishingName_MidnightCarp = "Midnight Carp"
+    VarFishingName_MidnightSquid = "Midnight Squid"
+    VarFishingName_Mussel = "Mussel"
+    VarFishingName_MutantCarp = "Mutant Carp"
+    VarFishingName_Octopus = "Octopus"
+    VarFishingName_Oyster = "Oyster"
+    VarFishingName_Perch = "Perch"
+    VarFishingName_Periwinkle = "Periwinkle"
+    VarFishingName_Pike = "Pike"
+    VarFishingName_Pufferfish = "Pufferfish"
+    VarFishingName_Rain = "Rain"
+    VarFishingName_RainbowTrout = "Rainbow Trout"
+    VarFishingImg_RedMullet = "img/Fishing/Red_Mullet.png"
+    VarFishingImg_RedSnapper = "img/Fishing/Red_Snapper.png"
+    VarFishingImg_Salmon = "img/Fishing/Salmon.png"
+    VarFishingImg_Sandfish = "img/Fishing/Sandfish.png"
+    VarFishingImg_Sardine = "img/Fishing/Sardine.png"
+    VarFishingImg_ScorpionCarp = "img/Fishing/Scorpion_Carp.png"
+    VarFishingImg_SeaCucumber = "img/Fishing/Sea_Cucumber.png"
+    VarFishingImg_Seaweed = "img/Fishing/Seaweed.png"
+    VarFishingImg_Shad = "img/Fishing/Shad.png"
+    VarFishingImg_Shrimp = "img/Fishing/Shrimp.png"
+    VarFishingImg_Slimejack = "img/Fishing/Slimejack.png"
+    VarFishingImg_SmallmouthBass = "img/Fishing/Smallmouth_Bass.png"
+    VarFishingImg_Snail = "img/Fishing/Snail.png"
+    VarFishingImg_SpookFish = "img/Fishing/Spook_Fish.png"
+    VarFishingImg_Squid = "img/Fishing/Squid.png"
+    VarFishingImg_Stonefish = "img/Fishing/Stonefish.png"
+    VarFishingImg_Sturgeon = "img/Fishing/Sturgeon.png"
+    VarFishingImg_Sunfish = "img/Fishing/Sunfish.png"
+    VarFishingImg_SuperCucumber = "img/Fishing/Super_Cucumber.png"
+    VarFishingImg_TigerTrout = "img/Fishing/Tiger_Trout.png"
+    VarFishingImg_Tilapia = "img/Fishing/Tilapia.png"
+    VarFishingImg_Tuna = "img/Fishing/Tuna.png"
+    VarFishingImg_VoidSalmon = "img/Fishing/Void_Salmon.png"
+    VarFishingImg_Walleye = "img/Fishing/Walleye.png"
+    VarFishingImg_WhiteAlgae = "img/Fishing/White_Algae.png"
+    VarFishingImg_Woodskip = "img/Fishing/Woodskip.png"
+    VarFishingImg_Albacore = "img/Fishing/Albacore.png"
+    VarFishingImg_Anchovy = "img/Fishing/Anchovy.png"
+    VarFishingImg_Angler = "img/Fishing/Angler.png"
+    VarFishingImg_Blobfish = "img/Fishing/Blobfish.png"
+    VarFishingImg_Bream = "img/Fishing/Bream.png"
+    VarFishingImg_Bullhead = "img/Fishing/Bullhead.png"
+    VarFishingImg_Carp = "img/Fishing/Carp.png"
+    VarFishingImg_Catfish = "img/Fishing/Catfish.png"
+    VarFishingImg_Chub = "img/Fishing/Chub.png"
+    VarFishingImg_Clam = "img/Fishing/Clam.png"
+    VarFishingImg_Cockle = "img/Fishing/Cockle.png"
+    VarFishingImg_Crab = "img/Fishing/Crab.png"
+    VarFishingImg_Crayfish = "img/Fishing/Crayfish.png"
+    VarFishingImg_Crimsonfish = "img/Fishing/Crimsonfish.png"
+    VarFishingImg_Dorado = "img/Fishing/Dorado.png"
+    VarFishingImg_Eel = "img/Fishing/Eel.png"
+    VarFishingImg_Flounder = "img/Fishing/Flounder.png"
+    VarFishingImg_Ghostfish = "img/Fishing/Ghostfish.png"
+    VarFishingImg_Glacierfish = "img/Fishing/Glacierfish.png"
+    VarFishingImg_GreenAlgae = "img/Fishing/Green_Algae.png"
+    VarFishingImg_Halibut = "img/Fishing/Halibut.png"
+    VarFishingImg_Herring = "img/Fishing/Herring.png"
+    VarFishingImg_IcePip = "img/Fishing/Ice_Pip.png"
+    VarFishingImg_LargemouthBass = "img/Fishing/Largemouth_Bass.png"
+    VarFishingImg_LavaEel = "img/Fishing/Lava_Eel.png"
+    VarFishingImg_Legend = "img/Fishing/Legend.png"
+    VarFishingImg_Lingcod = "img/Fishing/Lingcod.png"
+    VarFishingImg_Lobster = "img/Fishing/Lobster.png"
+    VarFishingImg_MidnightCarp = "img/Fishing/Midnight_Carp.png"
+    VarFishingImg_MidnightSquid = "img/Fishing/Midnight_Squid.png"
+    VarFishingImg_Mussel = "img/Fishing/Mussel.png"
+    VarFishingImg_MutantCarp = "img/Fishing/Mutant_Carp.png"
+    VarFishingImg_Octopus = "img/Fishing/Octopus.png"
+    VarFishingImg_Oyster = "img/Fishing/Oyster.png"
+    VarFishingImg_Perch = "img/Fishing/Perch.png"
+    VarFishingImg_Periwinkle = "img/Fishing/Periwinkle.png"
+    VarFishingImg_Pike = "img/Fishing/Pike.png"
+    VarFishingImg_Pufferfish = "img/Fishing/Pufferfish.png"
+    VarFishingImg_Rain = "img/Fishing/Rain.png"
+    VarFishingImg_RainbowTrout = "img/Fishing/Rainbow_Trout.png"
+    VarFishingVariableArray_RedMullet = ["VarFishingName_RedMullet", "VarFishingImg_RedMullet"]
+    VarFishingVariableArray_RedSnapper = ["VarFishingName_RedSnapper", "VarFishingImg_RedSnapper"]
+    VarFishingVariableArray_Salmon = ["VarFishingName_Salmon", "VarFishingImg_Salmon"]
+    VarFishingVariableArray_Sandfish = ["VarFishingName_Sandfish", "VarFishingImg_Sandfish"]
+    VarFishingVariableArray_Sardine = ["VarFishingName_Sardine", "VarFishingImg_Sardine"]
+    VarFishingVariableArray_ScorpionCarp = ["VarFishingName_ScorpionCarp", "VarFishingImg_ScorpionCarp"]
+    VarFishingVariableArray_SeaCucumber = ["VarFishingName_SeaCucumber", "VarFishingImg_SeaCucumber"]
+    VarFishingVariableArray_Seaweed = ["VarFishingName_Seaweed", "VarFishingImg_Seaweed"]
+    VarFishingVariableArray_Shad = ["VarFishingName_Shad", "VarFishingImg_Shad"]
+    VarFishingVariableArray_Shrimp = ["VarFishingName_Shrimp", "VarFishingImg_Shrimp"]
+    VarFishingVariableArray_Slimejack = ["VarFishingName_Slimejack", "VarFishingImg_Slimejack"]
+    VarFishingVariableArray_SmallmouthBass = ["VarFishingName_SmallmouthBass", "VarFishingImg_SmallmouthBass"]
+    VarFishingVariableArray_Snail = ["VarFishingName_Snail", "VarFishingImg_Snail"]
+    VarFishingVariableArray_SpookFish = ["VarFishingName_SpookFish", "VarFishingImg_SpookFish"]
+    VarFishingVariableArray_Squid = ["VarFishingName_Squid", "VarFishingImg_Squid"]
+    VarFishingVariableArray_Stonefish = ["VarFishingName_Stonefish", "VarFishingImg_Stonefish"]
+    VarFishingVariableArray_Sturgeon = ["VarFishingName_Sturgeon", "VarFishingImg_Sturgeon"]
+    VarFishingVariableArray_Sunfish = ["VarFishingName_Sunfish", "VarFishingImg_Sunfish"]
+    VarFishingVariableArray_SuperCucumber = ["VarFishingName_SuperCucumber", "VarFishingImg_SuperCucumber"]
+    VarFishingVariableArray_TigerTrout = ["VarFishingName_TigerTrout", "VarFishingImg_TigerTrout"]
+    VarFishingVariableArray_Tilapia = ["VarFishingName_Tilapia", "VarFishingImg_Tilapia"]
+    VarFishingVariableArray_Tuna = ["VarFishingName_Tuna", "VarFishingImg_Tuna"]
+    VarFishingVariableArray_VoidSalmon = ["VarFishingName_VoidSalmon", "VarFishingImg_VoidSalmon"]
+    VarFishingVariableArray_Walleye = ["VarFishingName_Walleye", "VarFishingImg_Walleye"]
+    VarFishingVariableArray_WhiteAlgae = ["VarFishingName_WhiteAlgae", "VarFishingImg_WhiteAlgae"]
+    VarFishingVariableArray_Woodskip = ["VarFishingName_Woodskip", "VarFishingImg_Woodskip"]
+    VarFishingVariableArray_Albacore = ["VarFishingName_Albacore", "VarFishingImg_Albacore"]
+    VarFishingVariableArray_Anchovy = ["VarFishingName_Anchovy", "VarFishingImg_Anchovy"]
+    VarFishingVariableArray_Angler = ["VarFishingName_Angler", "VarFishingImg_Angler"]
+    VarFishingVariableArray_Blobfish = ["VarFishingName_Blobfish", "VarFishingImg_Blobfish"]
+    VarFishingVariableArray_Bream = ["VarFishingName_Bream", "VarFishingImg_Bream"]
+    VarFishingVariableArray_Bullhead = ["VarFishingName_Bullhead", "VarFishingImg_Bullhead"]
+    VarFishingVariableArray_Carp = ["VarFishingName_Carp", "VarFishingImg_Carp"]
+    VarFishingVariableArray_Catfish = ["VarFishingName_Catfish", "VarFishingImg_Catfish"]
+    VarFishingVariableArray_Chub = ["VarFishingName_Chub", "VarFishingImg_Chub"]
+    VarFishingVariableArray_Clam = ["VarFishingName_Clam", "VarFishingImg_Clam"]
+    VarFishingVariableArray_Cockle = ["VarFishingName_Cockle", "VarFishingImg_Cockle"]
+    VarFishingVariableArray_Crab = ["VarFishingName_Crab", "VarFishingImg_Crab"]
+    VarFishingVariableArray_Crayfish = ["VarFishingName_Crayfish", "VarFishingImg_Crayfish"]
+    VarFishingVariableArray_Crimsonfish = ["VarFishingName_Crimsonfish", "VarFishingImg_Crimsonfish"]
+    VarFishingVariableArray_Dorado = ["VarFishingName_Dorado", "VarFishingImg_Dorado"]
+    VarFishingVariableArray_Eel = ["VarFishingName_Eel", "VarFishingImg_Eel"]
+    VarFishingVariableArray_Flounder = ["VarFishingName_Flounder", "VarFishingImg_Flounder"]
+    VarFishingVariableArray_Ghostfish = ["VarFishingName_Ghostfish", "VarFishingImg_Ghostfish"]
+    VarFishingVariableArray_Glacierfish = ["VarFishingName_Glacierfish", "VarFishingImg_Glacierfish"]
+    VarFishingVariableArray_GreenAlgae = ["VarFishingName_GreenAlgae", "VarFishingImg_GreenAlgae"]
+    VarFishingVariableArray_Halibut = ["VarFishingName_Halibut", "VarFishingImg_Halibut"]
+    VarFishingVariableArray_Herring = ["VarFishingName_Herring", "VarFishingImg_Herring"]
+    VarFishingVariableArray_IcePip = ["VarFishingName_IcePip", "VarFishingImg_IcePip"]
+    VarFishingVariableArray_LargemouthBass = ["VarFishingName_LargemouthBass", "VarFishingImg_LargemouthBass"]
+    VarFishingVariableArray_LavaEel = ["VarFishingName_LavaEel", "VarFishingImg_LavaEel"]
+    VarFishingVariableArray_Legend = ["VarFishingName_Legend", "VarFishingImg_Legend"]
+    VarFishingVariableArray_Lingcod = ["VarFishingName_Lingcod", "VarFishingImg_Lingcod"]
+    VarFishingVariableArray_Lobster = ["VarFishingName_Lobster", "VarFishingImg_Lobster"]
+    VarFishingVariableArray_MidnightCarp = ["VarFishingName_MidnightCarp", "VarFishingImg_MidnightCarp"]
+    VarFishingVariableArray_MidnightSquid = ["VarFishingName_MidnightSquid", "VarFishingImg_MidnightSquid"]
+    VarFishingVariableArray_Mussel = ["VarFishingName_Mussel", "VarFishingImg_Mussel"]
+    VarFishingVariableArray_MutantCarp = ["VarFishingName_MutantCarp", "VarFishingImg_MutantCarp"]
+    VarFishingVariableArray_Octopus = ["VarFishingName_Octopus", "VarFishingImg_Octopus"]
+    VarFishingVariableArray_Oyster = ["VarFishingName_Oyster", "VarFishingImg_Oyster"]
+    VarFishingVariableArray_Perch = ["VarFishingName_Perch", "VarFishingImg_Perch"]
+    VarFishingVariableArray_Periwinkle = ["VarFishingName_Periwinkle", "VarFishingImg_Periwinkle"]
+    VarFishingVariableArray_Pike = ["VarFishingName_Pike", "VarFishingImg_Pike"]
+    VarFishingVariableArray_Pufferfish = ["VarFishingName_Pufferfish", "VarFishingImg_Pufferfish"]
+    VarFishingVariableArray_Rain = ["VarFishingName_Rain", "VarFishingImg_Rain"]
+    VarFishingVariableArray_RainbowTrout = ["VarFishingName_RainbowTrout", "VarFishingImg_RainbowTrout"]
+    FishingArray = [VarFishingVariableArray_RedMullet, VarFishingVariableArray_RedSnapper, VarFishingVariableArray_Salmon, VarFishingVariableArray_Sandfish, VarFishingVariableArray_Sardine, VarFishingVariableArray_ScorpionCarp, VarFishingVariableArray_SeaCucumber, VarFishingVariableArray_Seaweed, VarFishingVariableArray_Shad, VarFishingVariableArray_Shrimp, VarFishingVariableArray_Slimejack, VarFishingVariableArray_SmallmouthBass, VarFishingVariableArray_Snail, VarFishingVariableArray_SpookFish, VarFishingVariableArray_Squid, VarFishingVariableArray_Stonefish, VarFishingVariableArray_Sturgeon, VarFishingVariableArray_Sunfish, VarFishingVariableArray_SuperCucumber, VarFishingVariableArray_TigerTrout, VarFishingVariableArray_Tilapia, VarFishingVariableArray_Tuna, VarFishingVariableArray_VoidSalmon, VarFishingVariableArray_Walleye, VarFishingVariableArray_WhiteAlgae, VarFishingVariableArray_Woodskip, VarFishingVariableArray_Albacore, VarFishingVariableArray_Anchovy, VarFishingVariableArray_Angler, VarFishingVariableArray_Blobfish, VarFishingVariableArray_Bream, VarFishingVariableArray_Bullhead, VarFishingVariableArray_Carp, VarFishingVariableArray_Catfish, VarFishingVariableArray_Chub, VarFishingVariableArray_Clam, VarFishingVariableArray_Cockle, VarFishingVariableArray_Crab, VarFishingVariableArray_Crayfish, VarFishingVariableArray_Crimsonfish, VarFishingVariableArray_Dorado, VarFishingVariableArray_Eel, VarFishingVariableArray_Flounder, VarFishingVariableArray_Ghostfish, VarFishingVariableArray_Glacierfish, VarFishingVariableArray_GreenAlgae, VarFishingVariableArray_Halibut, VarFishingVariableArray_Herring, VarFishingVariableArray_IcePip, VarFishingVariableArray_LargemouthBass, VarFishingVariableArray_LavaEel, VarFishingVariableArray_Legend, VarFishingVariableArray_Lingcod, VarFishingVariableArray_Lobster, VarFishingVariableArray_MidnightCarp, VarFishingVariableArray_MidnightSquid, VarFishingVariableArray_Mussel, VarFishingVariableArray_MutantCarp, VarFishingVariableArray_Octopus, VarFishingVariableArray_Oyster, VarFishingVariableArray_Perch, VarFishingVariableArray_Periwinkle, VarFishingVariableArray_Pike, VarFishingVariableArray_Pufferfish, VarFishingVariableArray_Rain, VarFishingVariableArray_RainbowTrout]
+    console.log(jQuery.rand(FishingArray))
+    $('.Water').attr('src', 'img/Fishing/Ocean.png')
+    IntervalTimeFishingOcean = 100;
+    setInterval(function() {
+        WaterPos = $('.WaterHolder').offset()
+        CaughtFish = jQuery.rand(FishingArray)
+        WaterW = $('.WaterHolder').width();
+        WaterH = $('.WaterHolder').height();
+        fl = getRandomArbitrary(WaterPos.left, WaterPos.left + WaterW - 50)
+        ft = getRandomArbitrary(WaterPos.top, WaterPos.top + WaterH - 50)
+        RotateFishingOcean('<img class="FishImg" src="' + window[CaughtFish[1]] + '">' + window[CaughtFish[0]])
+        $('.Fish_1').html(GainedItemFishingOcean1)
+        $('.Fish_2').html(GainedItemFishingOcean2)
+        $('.Fish_3').html(GainedItemFishingOcean3)
+        $('.Fish_4').html(GainedItemFishingOcean4)
+        $('.Fish_5').html(GainedItemFishingOcean5)
+        $('.Fish_6').html(GainedItemFishingOcean6)
+        $('.Fish_7').html(GainedItemFishingOcean7)
+        $('.Fish_8').html(GainedItemFishingOcean8)
+        $('.Fish_9').html(GainedItemFishingOcean9)
+
+        $('<img class="Fish Caught" src="' + window[CaughtFish[1]] + '">').appendTo('.WaterHolder').css({
+            top: ft,
+            left: fl
+        }).animate({
+            opacity: 0,
+            top: "-=50",
+
+        }, 3000, function() {
+            $(this).remove()
+        });
+        $()
+    }, IntervalTimeFishingOcean)
+
 
     function Poker() {
         EarnAmount_9 = 0;
@@ -247,7 +605,7 @@ $(document).ready(function() {
     Todo Created 11:48PM 12/24/2019
 
         Setup 
- + UnlockBattleArea            When in Battle show Image of Monster Currently Fighting 
+ + UnlockBattle            When in Battle show Image of Monster Currently Fighting 
             Show Stats
                 Player Stats
                 Enemy Stats
@@ -316,9 +674,16 @@ $(document).ready(function() {
 
     function RebirthInit() {
         Options = ["MainLevel", "Battle", "Mining", "Farming", "TreeCutting", "Gathering", "Digging", "Forging", "Sewing", "Apothecary", "Alchemy", "Jewellery", "AnimalHusbandry"];
-        UnlockedList = ["Farming", "Music", "Forest", "Gathering", "Mining", "BattleArea", "UndergroundCity", "Farm", "SlimeArea"]
+        UnlockedList = ["Farming", "Music", "Forest", "Gathering", "Mining", "Battle", "Underground City", "Farm", "Slime Area"]
         IntervalNames = ["BattleFarm", "MiningUndergroundCity", "GatheringForest"];
+        var i = 0;
+        while (i < Options.length) {
+            s = Options[i]
 
+            window["ExpTNL" + s] = 10;
+
+            i++
+        }
         i = 0;
         while (i < Options.length) {
             o = Options[i];
@@ -326,15 +691,16 @@ $(document).ready(function() {
             i++
         }
         SkillPointsRebirthMainLevel = 2500;
-        VarItemsAmount_PheonixDownRebirth = 10;
+        VarItemsAmount_PhoenixDownRebirth = 10;
         //***Locked Variables
         //***Lock Farming until unlocked by rebirth skill point purchase
         i = 0;
         while (i < UnlockedList.length) {
             o = UnlockedList[i];
-            window[o + "Unlocked"] = false
-            window["Unlock" + o] = "Unlock " + o
-            window["Name" + o] = "Locked: " + o
+            os = o.replace(/\s/g, '');
+            window[os + "Unlocked"] = false
+            window["Unlock" + os] = "Unlock " + o
+            window["Name" + os] = "Locked: " + o
 
 
             i++
@@ -342,12 +708,14 @@ $(document).ready(function() {
     }; //Do not Place Inside FunctionInit
     function Rebirth() {
         //***Rebirth()
+        CurrentlyFighting = false;
         i = 0;
         while (i < UnlockedList.length) {
             o = UnlockedList[i];
+            os = o.replace(/\s/g, '');
             if (window[o + "Unlocked"] == true) {
-                window["Name" + o] = o;
-                window["Unlock" + o] = o + " Unlocked"
+                window["Name" + os] = o;
+                window["Unlock" + os] = o + " Unlocked"
             }
 
 
@@ -366,7 +734,7 @@ $(document).ready(function() {
 
         ClearIntervals();
         FunctionCenterStage();
-        OnDocumentResize()
+        OnWindowResize()
         GetSetName();
         FunctionInitVariables();
         MainInfo();
@@ -384,8 +752,8 @@ $(document).ready(function() {
                 StatusAliveOrDead = "Alive"
             } else {
                 StatusAliveOrDead = "Dead"
-                if (VarItemsAmount_PheonixDown > 0) {
-                    VarItemsAmount_PheonixDown -= 1
+                if (VarItemsAmount_PhoenixDown > 0) {
+                    VarItemsAmount_PhoenixDown -= 1
                     StatsHealthCurrent = StatsHealth
                     StatusAliveOrDead = "Alive"
                 }
@@ -404,14 +772,21 @@ $(document).ready(function() {
 
     function ClearIntervals() {
         //***ClearIntervals
+        if (RunningBattleFarm == true) {
+            clearInterval(IntervalBattleFarm)
+            RunningBattleFarm = false
+        }
         if (RunningGatheringForest == true) {
             clearInterval(IntervalGatheringForest)
+            RunningGatheringForest = false
         }
         if (RunningMiningUndgroundCity == true) {
             clearInterval(IntervalMiningUndergroundCity)
+            RunningMiningUndgroundCity = false
         }
         if (RunningInitInterval == true) {
             clearInterval(IntervalFunctionInit)
+            RunningInitInterval = false
         }
     }
 
@@ -448,7 +823,7 @@ $(document).ready(function() {
                     window["Level" + s] += 1;
                     window["SkillPoints" + s] += 1 + window["SkillPoints" + s] / 5;
                     window["Exp" + s] -= window["ExpTNL" + s];
-                    window["ExpTNL" + s] = window["ExpTNL" + Option + i] * 1.2;
+                    window["ExpTNL" + s] = window["ExpTNL" + s] * 1.2;
                 }
                 i++
             }
@@ -479,10 +854,10 @@ $(document).ready(function() {
         PotionsHasteInUseNow = false;
         //***IntervalTimes
 
-        IntervalTimeSecondPanel = 5000;
-        IntervalTimeGatheringForest = 500;
-        IntervalTimeMiningUndergroundCity = 750;
-        IntervalTimeBattleFarm = 250;
+        IntervalTimeSecondPanel = 50;
+        IntervalTimeGatheringForest = 5000;
+        IntervalTimeMiningUndergroundCity = 5000;
+        IntervalTimeBattleFarm = 3000;
         RunningSecondPanel = false;
 
         while (v < IntervalNames.length) {
@@ -496,12 +871,14 @@ $(document).ready(function() {
 
 
         i = 1;
-        v = 0;
+
         while (i <= 5) {
+            v = 0;
             window["HasteLvL" + i + "Speed"] = HasteLvL1Speed * i;
             while (v < IntervalNames.length) {
                 o = IntervalNames[v];
                 window["IntervalTime" + o + "HasteLvL" + i] = window["IntervalTime" + o] / window["HasteLvL" + i + "Speed"];
+                console.log(window["IntervalTime" + o + "HasteLvL" + i])
                 v++
             }
             i++
@@ -515,6 +892,8 @@ $(document).ready(function() {
         StatsHealthCurrent = 200;
         StatsMP = 25;
         PlayerDamage = 5
+        NewItemImgBeg = ""
+        NewItemImgEnd = ""
 
         NumOfOptions = 13;
         console.log('Running')
@@ -527,10 +906,10 @@ $(document).ready(function() {
             window["SkillPoints" + s] = 0;
             window["ItemMultiplier" + s] = 1
             window["ItemMultiplier" + s + "Min"] = 1
-            window["ItemMultiplier" + s + "Max"] = 5
+            window["ItemMultiplier" + s + "Max"] = 10
             var v = 1;
             while (v <= 9) {
-                window["GainedItem" + s + v] = 0
+                window["GainedItem" + s + v] = NewItemImgBeg + "none" + NewItemImgEnd
                 v++
             }
             i++
@@ -848,44 +1227,71 @@ $(document).ready(function() {
         VarMiningExp_IceCrystal = 0;
         VarMiningExp_SandCrystal = 0;
         VarMiningExp_Orichalcum = 0;
-        //***Mining Amount
+
+        VarMiningImgDir_Coal = 'img/' + VarMiningName_Coal + ' Piece.png'
+        VarMiningImgDir_Iron = 'img/' + VarMiningName_Iron + ' Piece.png'
+        VarMiningImgDir_Copper = 'img/' + VarMiningName_Copper + ' Piece.png'
+        VarMiningImgDir_Bronze = 'img/' + VarMiningName_Bronze + ' Piece.png'
+        VarMiningImgDir_Silver = 'img/' + VarMiningName_Silver + ' Piece.png'
+        VarMiningImg_Coal = "<img class='ItemImageInline' src='img/" + VarMiningName_Coal + " Piece.png'>"
+        VarMiningImg_Iron = "<img class='ItemImageInline' src='img/" + VarMiningName_Iron + " Piece.png'>"
+        VarMiningImg_Copper = "<img class='ItemImageInline' src='img/" + VarMiningName_Copper + " Piece.png'>"
+        VarMiningImg_Bronze = "<img class='ItemImageInline' src='img/" + VarMiningName_Bronze + " Piece.png'>"
+        VarMiningImg_Silver = "<img class='ItemImageInline' src='img/" + VarMiningName_Silver + " Piece.png'>"
+            //***Mining Amount
         VarGatheringAmount_GreenGrass = 0;
         VarGatheringAmount_EyeDrops = 0;
         VarGatheringAmount_Ether = 0;
         VarGatheringAmount_Potion = 0;
-        VarGatheringAmount_PheonixDown = 0;
+        VarGatheringAmount_PhoenixDown = 0;
         //***Amount of Haste Potions to start with
-        VarGatheringAmount_HastePotionLvL1 = 50;
-        VarGatheringAmount_HastePotionLvL2 = 25;
-        VarGatheringAmount_HastePotionLvL3 = 15;
-        VarGatheringAmount_HastePotionLvL4 = 10;
-        VarGatheringAmount_HastePotionLvL5 = 5;
+        VarGatheringAmount_HastePotionLvL1 = 5;
+        VarGatheringAmount_HastePotionLvL2 = 5;
+        VarGatheringAmount_HastePotionLvL3 = 0;
+        VarGatheringAmount_HastePotionLvL4 = 0;
+        VarGatheringAmount_HastePotionLvL5 = 0;
 
         //***Haste Potions Amount of Time
         //Make sure potion time is greater than time it takes to complete one action
-        PotionsHasteLvL1LengthOfTime = 250;
-        PotionsHasteLvL2LengthOfTime = 250;
-        PotionsHasteLvL3LengthOfTime = 500;
-        PotionsHasteLvL4LengthOfTime = 750;
-        PotionsHasteLvL5LengthOfTime = 1000;
+        HastePotionLengthOfTime = 5000;
+        PotionsHasteLvL1LengthOfTime = HastePotionLengthOfTime;
+        PotionsHasteLvL2LengthOfTime = HastePotionLengthOfTime;
+        PotionsHasteLvL3LengthOfTime = HastePotionLengthOfTime;
+        PotionsHasteLvL4LengthOfTime = HastePotionLengthOfTime;
+        PotionsHasteLvL5LengthOfTime = HastePotionLengthOfTime;
         //***Gathering Names
         VarGatheringName_GreenGrass = "Green Grass";
         VarGatheringName_EyeDrops = "Eye Drops";
         VarGatheringName_Ether = "Ether";
         VarGatheringName_Potion = "Potion";
-        VarGatheringName_PheonixDown = "Pheonix Down";
+        VarGatheringName_PhoenixDown = "Phoenix Down";
         //***Haste Potion Names
         VarGatheringName_HastePotionLvL1 = "Haste Potion LvL I";
         VarGatheringName_HastePotionLvL2 = "Haste Potion LvL II";
         VarGatheringName_HastePotionLvL3 = "Haste Potion LvL III";
         VarGatheringName_HastePotionLvL4 = "Haste Potion LvL IV";
         VarGatheringName_HastePotionLvL5 = "Haste Potion LvL V";
+
+        VarGatheringImgDir_GreenGrass = "img/" + VarGatheringName_GreenGrass + ".png"
+        VarGatheringImgDir_EyeDrops = "img/" + VarGatheringName_EyeDrops + ".png"
+        VarGatheringImgDir_Ether = "img/" + VarGatheringName_Ether + ".png"
+        VarGatheringImgDir_Potion = "img/" + VarGatheringName_Potion + ".png"
+        VarGatheringImgDir_PhoenixDown = "img/" + VarGatheringName_PhoenixDown + ".png"
+        VarGatheringImgDir_HastePotionLvL1 = "img/" + VarGatheringName_HastePotionLvL1 + ".png"
+        VarGatheringImg_GreenGrass = "<img class='ItemImageInline' src='img/" + VarGatheringName_GreenGrass + ".png'>"
+        VarGatheringImg_EyeDrops = "<img class='ItemImageInline' src='img/" + VarGatheringName_EyeDrops + ".png'>"
+        VarGatheringImg_Ether = "<img class='ItemImageInline' src='img/" + VarGatheringName_Ether + ".png'>"
+        VarGatheringImg_Potion = "<img class='ItemImageInline' src='img/" + VarGatheringName_Potion + ".png'>"
+        VarGatheringImg_PhoenixDown = "<img class='ItemImageInline' src='img/" + VarGatheringName_PhoenixDown + ".png'>"
+        VarGatheringImg_HastePotionLvL1 = "<img class='ItemImageInline' src='img/" + VarGatheringName_HastePotionLvL1 + ".png'>"
+
+
         //***Gathering Exp
         VarGatheringExp_GreenGrass = 0.1;
         VarGatheringExp_EyeDrops = 0.3;
         VarGatheringExp_Ether = 1;
         VarGatheringExp_Potion = 3;
-        VarGatheringExp_PheonixDown = 15;
+        VarGatheringExp_PhoenixDown = 15;
         //***Haste Potion Exp
         VarGatheringExp_HastePotionLvL1 = 25;
         VarGatheringExp_HastePotionLvL2 = 250;
@@ -897,8 +1303,8 @@ $(document).ready(function() {
         VarGatheringChance_Forest_EyeDrops = 300;
         VarGatheringChance_Forest_Ether = 100;
         VarGatheringChance_Forest_Potion = 50;
-        VarGatheringChance_Forest_PheonixDown = 25;
-        VarGatheringChance_Forest_HastePotionLvL1 = 100;
+        VarGatheringChance_Forest_PhoenixDown = 25;
+        VarGatheringChance_Forest_HastePotionLvL1 = 15;
 
         EnemyName = "No Enemy"
         EnemyHP = "No Enemy"
@@ -945,17 +1351,35 @@ $(document).ready(function() {
         VarBattleName_Ham = "Ham"
         VarBattleName_HorseHide = "Horse Hide"
         VarBattleName_HorseMeat = "Horse Meat"
+        VarBattleImgDir_CowHide = 'img/' + VarBattleName_CowHide + '.png'
+        VarBattleImgDir_Steaks = 'img/' + VarBattleName_Steaks + '.png'
+        VarBattleImgDir_ChickenFeathers = 'img/' + VarBattleName_ChickenFeathers + '.png'
+        VarBattleImgDir_Eggs = 'img/' + VarBattleName_Eggs + '.png'
+        VarBattleImgDir_PigSkin = 'img/' + VarBattleName_PigSkin + '.png'
+        VarBattleImgDir_Ham = 'img/' + VarBattleName_Ham + '.png'
+        VarBattleImgDir_HorseHide = 'img/' + VarBattleName_HorseHide + '.png'
+        VarBattleImgDir_HorseMeat = 'img/' + VarBattleName_HorseMeat + '.png'
+        VarBattleImgDir_Bones = 'img/' + VarBattleName_Bones + '.png'
+        VarBattleImg_CowHide = "<img class='ItemImageInline' src='img/" + VarBattleName_CowHide + ".png'>"
+        VarBattleImg_Steaks = "<img class='ItemImageInline' src='img/" + VarBattleName_Steaks + ".png'>"
+        VarBattleImg_ChickenFeathers = "<img class='ItemImageInline' src='img/" + VarBattleName_ChickenFeathers + ".png'>"
+        VarBattleImg_Eggs = "<img class='ItemImageInline' src='img/" + VarBattleName_Eggs + ".png'>"
+        VarBattleImg_PigSkin = "<img class='ItemImageInline' src='img/" + VarBattleName_PigSkin + ".png'>"
+        VarBattleImg_Ham = "<img class='ItemImageInline' src='img/" + VarBattleName_Ham + ".png'>"
+        VarBattleImg_HorseHide = "<img class='ItemImageInline' src='img/" + VarBattleName_HorseHide + ".png'>"
+        VarBattleImg_HorseMeat = "<img class='ItemImageInline' src='img/" + VarBattleName_HorseMeat + ".png'>"
+        VarBattleImg_Bones = "<img class='ItemImageInline' src='img/" + VarBattleName_Bones + ".png'>"
 
-        VarItemsName_PheonixDown = "Pheonix Down";
-        VarItemsAmount_PheonixDown = VarItemsAmount_PheonixDownRebirth;
-        SkillPointsCostOfPheonixDownOne = 300
+        VarItemsName_PhoenixDown = "Phoenix Down";
+        VarItemsAmount_PhoenixDown = VarItemsAmount_PhoenixDownRebirth;
+        SkillPointsCostOfPhoenixDownOne = 300
             //***Unlock Amount of Skill Points
         UnlockFarmingAmountOfSkillPoints = 0
         UnlockMusicAmountOfSkillPoints = 1000
         UnlockForestAmountOfSkillPoints = 500
         UnlockGatheringAmountOfSkillPoints = 500
         UnlockMiningAmountOfSkillPoints = 300
-        UnlockBattleAreaAmountOfSkillPoints = 10
+        UnlockBattleAmountOfSkillPoints = 10
         UnlockSlimeAreaAmountOfSkillPoints = 50
         UnlockFarmAmountOfSkillPoints = 10
         UnlockUndergroundCityAmountOfSkillPoints = 50
@@ -967,8 +1391,8 @@ $(document).ready(function() {
 
     }
 
-    function OnDocumentResize() {
-        //***OnDocumentResize()
+    function OnWindowResize() {
+        //***OnWindowResize()
         $(window).resize(function() {
 
             //RealignBackground = RBG
@@ -999,11 +1423,11 @@ $(document).ready(function() {
 
     }
     //***Gain Item or Stat by Skill Point Use
-    function FunctionInsertMenuIncreasePheonixDownbyOne() {
-        if (SkillPointsRebirthBattle > SkillPointsCostOfPheonixDownOne) {
-            SkillPointsRebirthBattle -= SkillPointsCostOfPheonixDownOne
-            VarItemsAmount_PheonixDown += 1
-            VarItemsAmount_PheonixDownRebirth += 1
+    function FunctionInsertMenuIncreasePhoenixDownbyOne() {
+        if (SkillPointsRebirthBattle > SkillPointsCostOfPhoenixDownOne) {
+            SkillPointsRebirthBattle -= SkillPointsCostOfPhoenixDownOne
+            VarItemsAmount_PhoenixDown += 1
+            VarItemsAmount_PhoenixDownRebirth += 1
         }
     }
     //***Insert Unlock Function
@@ -1061,12 +1485,12 @@ $(document).ready(function() {
         }
     }
     //***Function Unlock Battle
-    function FunctionUnlockBattleArea() {
-        if (SkillPointsRebirthMainLevel >= UnlockBattleAreaAmountOfSkillPoints && BattleAreaUnlocked == false) {
-            SkillPointsRebirthMainLevel -= UnlockBattleAreaAmountOfSkillPoints
-            BattleAreaUnlocked = true
-            UnlockBattleArea = "Battle Unlocked"
-            NameBattleArea = "Battle"
+    function FunctionUnlockBattle() {
+        if (SkillPointsRebirthMainLevel >= UnlockBattleAmountOfSkillPoints && BattleUnlocked == false) {
+            SkillPointsRebirthMainLevel -= UnlockBattleAmountOfSkillPoints
+            BattleUnlocked = true
+            UnlockBattle = "Battle Unlocked"
+            NameBattle = "Battle"
 
         }
     }
@@ -1144,15 +1568,15 @@ $(document).ready(function() {
                     <br>Currently you have: ${SkillPointsRebirthMainLevel} Points
                     <br>Spend ${UnlockGatheringAmountOfSkillPoints} Points to Unlock Gathering
                     `
-        } else if (WhichMenu == "Skill Points Battle" && Option == "Increase Pheonix Down by One") {
-            //***Second Panel Increase Pheonix Down by One
+        } else if (WhichMenu == "Skill Points Battle" && Option == "Increase Phoenix Down by One") {
+            //***Second Panel Increase Phoenix Down by One
             IntervalTimeSecondPanel = 50;
             FunctionIntervalSecondPanel();
             SecondPanelText = `
                 <br>Currently you have: ${SkillPointsRebirthBattle} Points
-                <br>Cost of an Extra Pheonix Down: ${SkillPointsCostOfPheonixDownOne} Points
-                <br>Number of Pheonix Down at Rebirth: ${VarItemsAmount_PheonixDownRebirth} 
-                <br>Current Number of Pheonix Down: ${VarItemsAmount_PheonixDown}
+                <br>Cost of an Extra Phoenix Down: ${SkillPointsCostOfPhoenixDownOne} Points
+                <br>Number of Phoenix Down at Rebirth: ${VarItemsAmount_PhoenixDownRebirth} 
+                <br>Current Number of Phoenix Down: ${VarItemsAmount_PhoenixDown}
             `
         } else if (WhichMenu == "Skill Points Main Level" && Option == "Unlock Mining") {
             //***Second Panel Unlock Mining
@@ -1170,7 +1594,7 @@ $(document).ready(function() {
             SecondPanelText = `
                     <br>This will unlock the Battle but no areas inside of it
                     <br>${SkillPointsRebirthMainLevel} Points
-                    <br>Spend ${UnlockBattleAreaAmountOfSkillPoints} Points to Unlock Battle
+                    <br>Spend ${UnlockBattleAmountOfSkillPoints} Points to Unlock Battle
                     `
         } else if (WhichMenu == "Skill Points Main Level" && Option == "Unlock Underground City") {
             //***Second Panel Underground City Display
@@ -1235,7 +1659,7 @@ $(document).ready(function() {
             } else {
                 CurrentTime = IntervalTimeBattleFarm
             }
-            IntervalTimeSecondPanel = 50;
+            IntervalTimeSecondPanel = 20050;
             FunctionIntervalSecondPanel();
             SecondPanelText = `
                     <br>Exp is per Ore so 2 ${VarBattleName_CowHide} is ${VarBattleExp_CowHide * 2} Exp
@@ -1365,13 +1789,13 @@ $(document).ready(function() {
             CurrentTime = shortenNumber(CurrentTime)
             FunctionIntervalSecondPanel();
             SecondPanelText = `
-                            Exp is per Item so 5 Pheonix Down is ${VarGatheringExp_PheonixDown * 5} Exp
+                            Exp is per Item so 5 Phoenix Down is ${VarGatheringExp_PhoenixDown * 5} Exp
                             <br>Chance
                             <br>&emsp;&emsp;${VarGatheringName_GreenGrass}: ${0.1 * VarGatheringChance_Forest_GreenGrass}% ${VarGatheringExp_GreenGrass} Exp
                             <br>&emsp;&emsp;${VarGatheringName_EyeDrops}: ${0.1 * VarGatheringChance_Forest_EyeDrops}% ${VarGatheringExp_EyeDrops} Exp
                             <br>&emsp;&emsp;${VarGatheringName_Ether}: ${0.1 * VarGatheringChance_Forest_Ether}% ${VarGatheringExp_Ether} Exp
                             <br>&emsp;&emsp;${VarGatheringName_Potion}: ${0.1 * VarGatheringChance_Forest_Potion}% ${VarGatheringExp_Potion} Exp
-                            <br>&emsp;&emsp;${VarGatheringName_PheonixDown}: ${0.1 * VarGatheringChance_Forest_PheonixDown}% ${VarGatheringExp_PheonixDown} Exp
+                            <br>&emsp;&emsp;${VarGatheringName_PhoenixDown}: ${0.1 * VarGatheringChance_Forest_PhoenixDown}% ${VarGatheringExp_PhoenixDown} Exp
                             <br>&emsp;&emsp;${VarGatheringName_HastePotionLvL1}: ${0.1 * VarGatheringChance_Forest_HastePotionLvL1}% ${VarGatheringExp_HastePotionLvL1} Exp
                             <br>
                             <br>Mining Time: ${CurrentTime} Milliseconds
@@ -2067,7 +2491,7 @@ $(document).ready(function() {
                 // up arrow
                 if ($(".HO").hasClass("M1")) {
                     $(".M1").removeClass("HO").addClass("UHO");
-                    $(".M8").removeClass("UHO").addClass("HO");
+                    $(".M12").removeClass("UHO").addClass("HO");
                     OptionsUp();
                     SecondPanel();
                 } else if ($(".HO").hasClass("M2")) {
@@ -2103,6 +2527,26 @@ $(document).ready(function() {
                 } else if ($(".HO").hasClass("M8")) {
                     $(".M8").removeClass("HO").addClass("UHO");
                     $(".M7").removeClass("UHO").addClass("HO");
+                    OptionsUp();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M9")) {
+                    $(".M9").removeClass("HO").addClass("UHO");
+                    $(".M8").removeClass("UHO").addClass("HO");
+                    OptionsUp();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M10")) {
+                    $(".M10").removeClass("HO").addClass("UHO");
+                    $(".M9").removeClass("UHO").addClass("HO");
+                    OptionsUp();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M11")) {
+                    $(".M11").removeClass("HO").addClass("UHO");
+                    $(".M10").removeClass("UHO").addClass("HO");
+                    OptionsUp();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M12")) {
+                    $(".M12").removeClass("HO").addClass("UHO");
+                    $(".M11").removeClass("UHO").addClass("HO");
                     OptionsUp();
                     SecondPanel();
                 }
@@ -2153,6 +2597,26 @@ $(document).ready(function() {
                     SecondPanel();
                 } else if ($(".HO").hasClass("M8")) {
                     $(".M8").removeClass("HO").addClass("UHO");
+                    $(".M9").removeClass("UHO").addClass("HO");
+                    OptionsDown();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M9")) {
+                    $(".M9").removeClass("HO").addClass("UHO");
+                    $(".M10").removeClass("UHO").addClass("HO");
+                    OptionsDown();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M10")) {
+                    $(".M10").removeClass("HO").addClass("UHO");
+                    $(".M11").removeClass("UHO").addClass("HO");
+                    OptionsDown();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M11")) {
+                    $(".M11").removeClass("HO").addClass("UHO");
+                    $(".M12").removeClass("UHO").addClass("HO");
+                    OptionsDown();
+                    SecondPanel();
+                } else if ($(".HO").hasClass("M12")) {
+                    $(".M12").removeClass("HO").addClass("UHO");
                     $(".M1").removeClass("UHO").addClass("HO");
                     OptionsDown();
                     SecondPanel();
@@ -2327,8 +2791,8 @@ $(document).ready(function() {
             MainMenu();
         }
         //***SO()
-        if (Option == "Increase Pheonix Down by One" && WhichMenu == "Skill Points Battle") {
-            FunctionInsertMenuIncreasePheonixDownbyOne();
+        if (Option == "Increase Phoenix Down by One" && WhichMenu == "Skill Points Battle") {
+            FunctionInsertMenuIncreasePhoenixDownbyOne();
         }
         if (Option == "Main Level" && WhichMenu == "Skill Points") {
             FunctionInsertMenuSkillPointsMainLevel();
@@ -2364,7 +2828,7 @@ $(document).ready(function() {
         }
         //***Unlock Battle Upon Select Option
         if (Option == "Unlock Battle" && WhichMenu == "Skill Points Main Level") {
-            FunctionUnlockBattleArea();
+            FunctionUnlockBattle();
             FunctionInsertMenuSkillPointsMainLevel();
             SetBackground("BattleBackground.jpg")
         }
@@ -2384,12 +2848,12 @@ $(document).ready(function() {
             FunctionUnlockSlimeArea();
             FunctionInsertMenuSkillPointsBattle();
         }
-        if (Option == "Farm" && WhichMenu == "Battle") {
+        if (Option == NameFarm && WhichMenu == "Battle") {
             FunctionBattleFarm(IntervalTimeBattleFarm);
             SetBackground("FarmBackground.jpeg")
 
         }
-        if (Option == "Battle" && WhichMenu == "Main Menu") {
+        if (Option == NameBattle && WhichMenu == "Main Menu") {
             FunctionInsertMenuBattle();
             SetBackground("BattleBackground.jpg")
         }
@@ -2442,6 +2906,10 @@ $(document).ready(function() {
         //***Select Main Menu Page Seven
         if (Option == "More" && WhichMenu == "Main Menu Page Six") {
             MainMenu7();
+        }
+        //Select Farming
+        if (Option == "Farming" && WhichMenu == "Main Menu") {
+            RunFarming();
         }
         //***Select Gathering Page 1
         if (Option == "Gathering") {
@@ -2555,24 +3023,56 @@ $(document).ready(function() {
         OptionsDown();
 
     }
+
+    function TargetPractice() {
+        ww = $(window).width();
+        wh = $(window).height();
+
+        rl = getRandomArbitrary(1, ww - 100)
+        rt = getRandomArbitrary(1, wh - 100)
+        $('body').append('<img class="Target" src="img/Target.png">').css({
+            top: rt,
+            left: rl
+        })
+        $('.Target').click(function() {
+
+            $this = $(this).attr('src', 'img/Target Hit.png').addClass('Hit')
+            setTimeout(function($this) {
+                $('.Hit').remove();
+                TargetPractice();
+            }, 230)
+        })
+    }
+    //TargetPractice();
+    //Farming Function
+    function RunFarming() {
+        $('.Stage').hide();
+        $('body').css("position", "relative")
+        $(".ContainerContainer,.ShowUpgradeDirt,.MiningClick,.PlantHowManyAtATime,.ShowSell,.Money").show();
+    }
     //***Function Insert Menu
 
     function FunctionInsertMenuSkillPointsMainLevel() {
         //***FunctionInsertMenuSkillPointsMainLevel()
         $(".MenuName").html("Skill Points Main Level");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;" + UnlockBattleArea);
-        $(".M3").html("&emsp;&emsp;" + UnlockFarm);
-        $(".M4").html("&emsp;&emsp;" + UnlockMining);
-        $(".M5").html("&emsp;&emsp;" + UnlockUndergroundCity);
-        $(".M6").html("&emsp;&emsp;" + UnlockGathering);
-        $(".M7").html("&emsp;&emsp;" + UnlockMusic);
+        $(".M2").html("&emsp;&emsp;" + UnlockMusic);
+        $(".M3").html("&emsp;&emsp;" + UnlockBattle);
+        $(".M4").html("&emsp;&emsp;" + UnlockFarm);
+        $(".M5").html("&emsp;&emsp;" + UnlockMining);
+        $(".M6").html("&emsp;&emsp;" + UnlockUndergroundCity);
+        $(".M7").html("&emsp;&emsp;" + UnlockGathering);
         $(".M8").html("&emsp;&emsp;" + UnlockForest);
+        $(".M9").html("&emsp;&emsp;" + UnlockFarming);
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenuSkillPointsBattle() {
         //***FunctionInsertMenuSkillPoints Battle()
-        $(".MenuName").html("Skill Points Battle");
+        $(".MenuName").html("Skill Points " + NameBattle);
         $(".M1").html("&emsp;&emsp;More");
         $(".M2").html("&emsp;&emsp;" + UnlockFarming);
         $(".M3").html("&emsp;&emsp;" + UnlockSlimeArea);
@@ -2581,13 +3081,18 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Increase Damage by One");
         $(".M7").html("&emsp;&emsp;Increase HP by Five");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
 
 
     function FunctionInsertMenuBattle() {
         //***FunctionInsertMenuBattle()
-        $(".MenuName").html("Battle");
+        $(".MenuName").html(NameBattle);
         $(".M1").html("&emsp;&emsp;More ");
         $(".M2").html("&emsp;&emsp;" + NameFarm);
         $(".M3").html("&emsp;&emsp;" + NameSlimeArea);
@@ -2596,6 +3101,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
 
@@ -2608,12 +3118,16 @@ $(document).ready(function() {
         $(".MenuName").html("Skill Points");
         $(".M1").html("&emsp;&emsp;More");
         $(".M2").html("&emsp;&emsp;Main Level");
-        $(".M3").html("&emsp;&emsp;" + NameBattleArea);
+        $(".M3").html("&emsp;&emsp;" + NameBattle);
         $(".M4").html("&emsp;&emsp;" + NameMining);
         $(".M5").html("&emsp;&emsp;" + NameFarming);
         $(".M6").html("&emsp;&emsp;Locked: Tree Cutting");
         $(".M7").html("&emsp;&emsp;" + NameGathering);
         $(".M8").html("&emsp;&emsp;Locked: Digging");
+        $(".M9").html("&emsp;&emsp;Locked: Fishing");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function SkillPointsPage2() {
@@ -2627,58 +3141,79 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Jewellery");
         $(".M7").html("&emsp;&emsp;Locked: Animal Husbandry");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function MainMenu() {
         //***MainMenu()
         $(".MenuName").html("Main Menu");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;" + NameBattleArea);
+        $(".M2").html("&emsp;&emsp;" + NameBattle);
         $(".M3").html("&emsp;&emsp;Locked: Store");
         $(".M4").html("&emsp;&emsp;" + NameMining);
         $(".M5").html("&emsp;&emsp;" + NameFarming);
         $(".M6").html("&emsp;&emsp;Locked: Tree Cutting");
         $(".M7").html("&emsp;&emsp;" + NameGathering);
-        $(".M8").html("&emsp;&emsp;Locked: Items");
+        $(".M8").html("&emsp;&emsp;Locked: Fishing");
+        $(".M9").html("&emsp;&emsp;Locked: Glass Blowing");
+        $(".M10").html("&emsp;&emsp;Locked: Pottery");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;Locked: Items");
     }
 
     function FunctionInsertMenu_Gathering() {
         //***FunctionInsertMenu_Gathering()
         $(".MenuName").html("Gathering");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;" + NameForest);
-        $(".M3").html("&emsp;&emsp;Locked: Desert");
-        $(".M4").html("&emsp;&emsp;Locked: Tundra");
-        $(".M5").html("&emsp;&emsp;Locked: Everglades");
-        $(".M6").html("&emsp;&emsp;Locked: Unknown Island");
-        $(".M7").html("&emsp;&emsp;Locked: Moon City");
-        $(".M8").html("&emsp;&emsp;Locked: Sun City");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;");
+        $(".M4").html("&emsp;&emsp;" + NameForest);
+        $(".M5").html("&emsp;&emsp;Locked: Desert");
+        $(".M6").html("&emsp;&emsp;Locked: Tundra");
+        $(".M7").html("&emsp;&emsp;Locked: Everglades");
+        $(".M8").html("&emsp;&emsp;Locked: Unknown Island");
+        $(".M9").html("&emsp;&emsp;Locked: Moon City");
+        $(".M10").html("&emsp;&emsp;Locked: Sun City");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Gathering2() {
         //***FunctionInsertMenu_Gathering2()
         $(".MenuName").html("Gathering Page Two");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;Locked: Demon Town");
-        $(".M3").html("&emsp;&emsp;Locked: Angel Clouds");
-        $(".M4").html("&emsp;&emsp;Locked: Gods Home");
-        $(".M5").html("&emsp;&emsp;Locked: Gods Creater City");
-        $(".M6").html("&emsp;&emsp;Locked: Gods Creater Home");
-        $(".M7").html("&emsp;&emsp;Locked: Multiverse Center");
-        $(".M8").html("&emsp;&emsp;Locked: Ricks Garage");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;");
+        $(".M4").html("&emsp;&emsp;Locked: Demon Town");
+        $(".M5").html("&emsp;&emsp;Locked: Angel Clouds");
+        $(".M6").html("&emsp;&emsp;Locked: Gods Home");
+        $(".M7").html("&emsp;&emsp;Locked: Gods Creater City");
+        $(".M8").html("&emsp;&emsp;Locked: Gods Creater Home");
+        $(".M9").html("&emsp;&emsp;Locked: Multiverse Center");
+        $(".M10").html("&emsp;&emsp;Locked: Ricks Garage");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Gathering3() {
         //***FunctionInsertMenu_Gathering3()
         $(".MenuName").html("Gathering Page Three");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;Locked: Tiffas Loot");
-        $(".M3").html("&emsp;&emsp;Locked: Gokus Spaceship");
-        $(".M4").html("&emsp;&emsp;Locked: Gohans Home");
-        $(".M5").html("&emsp;&emsp;Locked: Vegetas House");
-        $(".M6").html("&emsp;&emsp;Locked: Planet Namake");
-        $(".M7").html("&emsp;&emsp;Locked: Planet Vegeta");
-        $(".M8").html("&emsp;&emsp;Locked: Master Roshis Island");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;");
+        $(".M4").html("&emsp;&emsp;Locked: Tiffas Loot");
+        $(".M5").html("&emsp;&emsp;Locked: Gokus Spaceship");
+        $(".M6").html("&emsp;&emsp;Locked: Gohans Home");
+        $(".M7").html("&emsp;&emsp;Locked: Vegetas House");
+        $(".M8").html("&emsp;&emsp;Locked: Planet Namake");
+        $(".M9").html("&emsp;&emsp;Locked: Planet Vegeta");
+        $(".M10").html("&emsp;&emsp;Locked: Master Roshis Island");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Gathering4() {
@@ -2692,71 +3227,95 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;Locked: Whis Special Bag");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function MainMenu2() {
         //***MainMenu2()
         $(".MenuName").html("Main Menu Page Two");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;Locked: Digging");
-        $(".M3").html("&emsp;&emsp;Locked: Forging");
-        $(".M4").html("&emsp;&emsp;Locked: Sewing");
-        $(".M5").html("&emsp;&emsp;Locked: Apothecary");
-        $(".M6").html("&emsp;&emsp;Locked: Alchemy");
-        $(".M7").html("&emsp;&emsp;Locked: Jewellery");
-        $(".M8").html("&emsp;&emsp;Locked: Animal Husbandry");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;");
+        $(".M4").html("&emsp;&emsp;Locked: Digging");
+        $(".M5").html("&emsp;&emsp;Locked: Forging");
+        $(".M6").html("&emsp;&emsp;Locked: Sewing");
+        $(".M7").html("&emsp;&emsp;Locked: Apothecary");
+        $(".M8").html("&emsp;&emsp;Locked: Alchemy");
+        $(".M9").html("&emsp;&emsp;Locked: Jewellery");
+        $(".M10").html("&emsp;&emsp;Locked: Animal Husbandry");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function MainMenu3() {
         //***MainMenu3()
         $(".MenuName").html("Main Menu Page Three");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;" + NameMusic);
-        $(".M3").html("&emsp;&emsp;Locked: Gambling");
-        $(".M4").html("&emsp;&emsp;Locked: School");
-        $(".M5").html("&emsp;&emsp;Locked: Charity");
-        $(".M6").html("&emsp;&emsp;Locked: Chores");
-        $(".M7").html("&emsp;&emsp;Locked: Training");
-        $(".M8").html("&emsp;&emsp;Locked: Hire Assistance");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;" + NameMusic);
+        $(".M4").html("&emsp;&emsp;");
+        $(".M5").html("&emsp;&emsp;Locked: Gambling");
+        $(".M6").html("&emsp;&emsp;Locked: School");
+        $(".M7").html("&emsp;&emsp;Locked: Charity");
+        $(".M8").html("&emsp;&emsp;Locked: Chores");
+        $(".M9").html("&emsp;&emsp;Locked: Training");
+        $(".M10").html("&emsp;&emsp;Locked: Hire Assistance");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function MainMenu4() {
         //***MainMenu4()
         $(".MenuName").html("Main Menu Page Four");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;Locked: High Stakes Gambling");
-        $(".M3").html("&emsp;&emsp;Locked: Monster Contracts");
-        $(".M4").html("&emsp;&emsp;Locked: Item Requests");
-        $(".M5").html("&emsp;&emsp;Locked: Permits");
-        $(".M6").html("&emsp;&emsp;Locked: Technologies");
-        $(".M7").html("&emsp;&emsp;Locked: Recreational Activies");
-        $(".M8").html("&emsp;&emsp;Locked: Weather Manipulation");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;");
+        $(".M4").html("&emsp;&emsp;Locked: High Stakes Gambling");
+        $(".M5").html("&emsp;&emsp;Locked: Monster Contracts");
+        $(".M6").html("&emsp;&emsp;Locked: Item Requests");
+        $(".M7").html("&emsp;&emsp;Locked: Permits");
+        $(".M8").html("&emsp;&emsp;Locked: Technologies");
+        $(".M9").html("&emsp;&emsp;Locked: Recreational Activies");
+        $(".M10").html("&emsp;&emsp;Locked: Weather Manipulation");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function MainMenu5() {
         //***MainMenu5()
         $(".MenuName").html("Main Menu Page Five");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;Locked: Omega Battles");
-        $(".M3").html("&emsp;&emsp;Locked: Raids");
-        $(".M4").html("&emsp;&emsp;Locked: Psychotic Quest Requests");
-        $(".M5").html("&emsp;&emsp;Locked: Weather Manipulation");
-        $(".M6").html("&emsp;&emsp;Locked: Recreational Activies");
-        $(".M7").html("&emsp;&emsp;Locked: Trancendence");
-        $(".M8").html("&emsp;&emsp;Locked: Angel Interference");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;Locked: Omega Battles");
+        $(".M4").html("&emsp;&emsp;Locked: Raids");
+        $(".M5").html("&emsp;&emsp;Locked: Psychotic Quest Requests");
+        $(".M6").html("&emsp;&emsp;Locked: Weather Manipulation");
+        $(".M7").html("&emsp;&emsp;Locked: Recreational Activies");
+        $(".M8").html("&emsp;&emsp;Locked: Trancendence");
+        $(".M9").html("&emsp;&emsp;Locked: Angel Interference");
+        $(".M10").html("&emsp;&emsp;Locked: Spells");
+        $(".M11").html("&emsp;&emsp;Locked: Rage Mode");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function MainMenu6() {
         //***MainMenu6()
         $(".MenuName").html("Main Menu Page Six");
         $(".M1").html("&emsp;&emsp;More");
-        $(".M2").html("&emsp;&emsp;Skill Points");
-        $(".M3").html("&emsp;&emsp;Rebirth");
-        $(".M4").html("&emsp;&emsp;Locked: Trancendence");
-        $(".M5").html("&emsp;&emsp;Locked: Angel Rebirth");
-        $(".M6").html("&emsp;&emsp;Locked: Devil Rebirth");
-        $(".M7").html("&emsp;&emsp;Locked: God Rebirth");
-        $(".M8").html("&emsp;&emsp;Locked: Multiverse Creator Rebirth");
+        $(".M2").html("&emsp;&emsp;");
+        $(".M3").html("&emsp;&emsp;Skill Points");
+        $(".M4").html("&emsp;&emsp;");
+        $(".M5").html("&emsp;&emsp;Rebirth");
+        $(".M6").html("&emsp;&emsp;Locked: Trancendence");
+        $(".M7").html("&emsp;&emsp;Locked: Angel Rebirth");
+        $(".M8").html("&emsp;&emsp;Locked: Devil Rebirth");
+        $(".M9").html("&emsp;&emsp;Locked: God Rebirth");
+        $(".M10").html("&emsp;&emsp;Locked: Multiverse Creator Rebirth");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function MainMenu7() {
@@ -2768,8 +3327,12 @@ $(document).ready(function() {
         $(".M4").html("&emsp;&emsp;");
         $(".M5").html("&emsp;&emsp;");
         $(".M6").html("&emsp;&emsp;");
-        $(".M7").html("&emsp;&emsp;Locked: Earn Special Codes");
-        $(".M8").html("&emsp;&emsp;Locked: Use Special Code");
+        $(".M7").html("&emsp;&emsp;");
+        $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;Locked: Earn Special Codes");
+        $(".M12").html("&emsp;&emsp;Locked: Use Special Code");
     }
 
     function Mining() {
@@ -2783,6 +3346,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function Items() {
@@ -2796,6 +3364,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Use");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function ItemsBuy() {
@@ -2809,6 +3382,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Rebirth Items");
         $(".M7").html("&emsp;&emsp;Locked: Potions");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function ItemsSell() {
@@ -2822,6 +3400,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Potions");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function ItemsSellMinerals() {
@@ -2835,6 +3418,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Clay");
         $(".M7").html("&emsp;&emsp;Glass");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function ItemsSellMinerals2() {
@@ -2848,6 +3436,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Bronze");
         $(".M7").html("&emsp;&emsp;Silver");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function ItemsSellMinerals3() {
@@ -2861,6 +3454,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;");
         $(".M7").html("&emsp;&emsp;Orichalcum");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function ItemsUse() {
@@ -2874,6 +3472,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function BattleEquipment() {
@@ -2887,6 +3490,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Shoes");
         $(".M7").html("&emsp;&emsp;Locked: Helment");
         $(".M8").html("&emsp;&emsp;Locked: Crown");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_MusicOptions() {
@@ -2899,6 +3506,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music() {
@@ -2912,6 +3524,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Truthseekah");
         $(".M7").html("&emsp;&emsp;Illuminati Congo");
         $(".M8").html("&emsp;&emsp;Itom Lab");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music2() {
@@ -2925,6 +3541,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Illuminati Congo");
         $(".M7").html("&emsp;&emsp;Itom Lab");
         $(".M8").html("&emsp;&emsp;Linkin Park");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music3() {
@@ -2938,6 +3558,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Janis Joplin");
         $(".M7").html("&emsp;&emsp;Locked: The Doors");
         $(".M8").html("&emsp;&emsp;Locked: Neil Young");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music4() {
@@ -2951,6 +3575,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: The Rolling Stones");
         $(".M7").html("&emsp;&emsp;Locked: Bob Dylan");
         $(".M8").html("&emsp;&emsp;Locked: The Beatles");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music5() {
@@ -2964,6 +3592,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Stevie Wonder");
         $(".M7").html("&emsp;&emsp;Locked: Led Zeppelin");
         $(".M8").html("&emsp;&emsp;Locked: Bob Marley");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music6() {
@@ -2977,6 +3609,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Locked: Radiohead");
         $(".M7").html("&emsp;&emsp;Locked: Nirvana");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_AlaisClay_Bandcamp() {
@@ -2989,6 +3626,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Alais Clay and Steve Grant Collabs");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_SteveGrant_Bandcamp() {
@@ -3001,6 +3643,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Alais Clay and Steve Grant Collabs");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_Truthseekah_Bandcamp() {
@@ -3013,6 +3660,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Awaken The Fire");
         $(".M7").html("&emsp;&emsp;Take My Life");
         $(".M8").html("&emsp;&emsp;Second Life");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music_Khatum_Bandcamp() {
@@ -3025,6 +3676,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Alais Clay and Steve Grant Collabs");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_Watsky_Bandcamp() {
@@ -3037,6 +3693,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Alais Clay and Steve Grant Collabs");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_Nursehella_Bandcamp() {
@@ -3049,6 +3710,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Alais Clay and Steve Grant Collabs");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_SpiritofTruth_Bandcamp() {
@@ -3061,6 +3727,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Alais Clay and Steve Grant Collabs");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_IlluminatiCongo_Bandcamp() {
@@ -3073,6 +3744,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Lucid");
         $(".M7").html("&emsp;&emsp;Jewels");
         $(".M8").html("&emsp;&emsp;Illumine The Nadis");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music_IlluminatiCongo_Bandcamp2() {
@@ -3085,6 +3760,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Health Wealth Knowledge of Self");
         $(".M7").html("&emsp;&emsp;Siddha Gita");
         $(".M8").html("&emsp;&emsp;Green Is All I Need");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music_IlluminatiCongo_Bandcamp3() {
@@ -3097,6 +3776,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;ILLUMINATI CONGO");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     function FunctionInsertMenu_Music_ItomLab_Bandcamp() {
@@ -3109,6 +3793,10 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;NEYEN");
         $(".M7").html("&emsp;&emsp;The Crop Circle of Life");
         $(".M8").html("&emsp;&emsp;Atomic Consciousness");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
     }
 
     function FunctionInsertMenu_Music_LinkinPark_Bandcamp() {
@@ -3121,6 +3809,11 @@ $(document).ready(function() {
         $(".M6").html("&emsp;&emsp;Alais Clay and Steve Grant Collabs");
         $(".M7").html("&emsp;&emsp;");
         $(".M8").html("&emsp;&emsp;");
+        $(".M9").html("&emsp;&emsp;");
+        $(".M10").html("&emsp;&emsp;");
+        $(".M11").html("&emsp;&emsp;");
+        $(".M12").html("&emsp;&emsp;");
+
     }
 
     //***RotateItemsGained
@@ -3287,211 +3980,247 @@ $(document).ready(function() {
             clearInterval(IntervalBattleFarm)
         }
         IntervalBattleFarm = setInterval(function() {
-            console.log("running battle")
-            RunningBattleFarm = true;
-            if (StatusAliveOrDead == "Dead") {
+            i = 0;
+            while (i < NumberOfTurnsAtOnce) {
+                console.log("running battle")
+                RunningBattleFarm = true;
+                if (StatusAliveOrDead == "Dead") {
 
-            } else if (StatusAliveOrDead == "Alive") {
-                if (CurrentlyFighting == false) {
-                    r = getRandom(0, 1000);
-                    if (r <= VarBattleChance_Farm_Cow) {
-                        EnemyDamage = VarBattleDamage_Farm_Cow
-                        CurrentlyFighting = true;
-                        console.log("Enemy is Cow")
-                        EnemyName = "Cow";
-                        EnemyHP = VarBattle_CowHP
-                    } else if (r <= VarBattleChance_Farm_Horse) {
-                        EnemyDamage = VarBattleDamage_Farm_Horse
-                        CurrentlyFighting = true;
-                        console.log("Enemy is Horse")
-                        EnemyName = "Horse"
-                        EnemyHP = VarBattle_HorseHP
-                    } else if (r <= VarBattleChance_Farm_Pig) {
-                        EnemyDamage = VarBattleDamage_Farm_Pig
-                        CurrentlyFighting = true;
-                        console.log("Enemy is Pig")
-                        EnemyName = "Pig"
-                        EnemyHP = VarBattle_PigHP
-                    } else if (r <= VarBattleChance_Farm_Chicken) {
-                        EnemyDamage = VarBattleDamage_Farm_Chicken
-                        CurrentlyFighting = true;
-                        console.log("Enemy is Chicken")
-                        EnemyName = "Chicken"
-                        EnemyHP = VarBattle_ChickenHP
-                    }
-                } else {
-                    if (EnemyName == "Cow") {
-                        if (EnemyHP > 0) {
-                            EnemyHP -= PlayerDamage
+                } else if (StatusAliveOrDead == "Alive") {
+                    if (CurrentlyFighting == false) {
+                        r = getRandom(0, 1000);
+                        if (r <= VarBattleChance_Farm_Cow) {
+                            EnemyDamage = VarBattleDamage_Farm_Cow
+                            CurrentlyFighting = true;
+                            console.log("Enemy is Cow")
+                            EnemyName = "Cow";
+                            EnemyHP = VarBattle_CowHP
+                        } else if (r <= VarBattleChance_Farm_Horse) {
+                            EnemyDamage = VarBattleDamage_Farm_Horse
+                            CurrentlyFighting = true;
+                            console.log("Enemy is Horse")
+                            EnemyName = "Horse"
+                            EnemyHP = VarBattle_HorseHP
+                        } else if (r <= VarBattleChance_Farm_Pig) {
+                            EnemyDamage = VarBattleDamage_Farm_Pig
+                            CurrentlyFighting = true;
+                            console.log("Enemy is Pig")
+                            EnemyName = "Pig"
+                            EnemyHP = VarBattle_PigHP
+                        } else if (r <= VarBattleChance_Farm_Chicken) {
+                            EnemyDamage = VarBattleDamage_Farm_Chicken
+                            CurrentlyFighting = true;
+                            console.log("Enemy is Chicken")
+                            EnemyName = "Chicken"
+                            EnemyHP = VarBattle_ChickenHP
+                        }
+                    } else {
+                        if (EnemyName == "Cow") {
                             if (EnemyHP > 0) {
-                                StatsHealthCurrent -= EnemyDamage
+                                EnemyHP -= PlayerDamage
+                                if (EnemyHP > 0) {
+                                    StatsHealthCurrent -= EnemyDamage
+                                } else {
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_Bones += AmountGained;
+                                    ExpMainLevel += VarBattleExp_Bones * AmountGained;
+                                    ExpBattle += VarBattleExp_Bones * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                    AmountGained = ItemMultiplierGathering;
+                                    VarBattleAmount_CowHide += AmountGained;
+                                    ExpMainLevel += VarBattleExp_CowHide * AmountGained;
+                                    ExpBattle += VarBattleExp_CowHide * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_CowHide, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_CowHide + VarBattleName_CowHide + ": " + AmountGained + NewItemImgEnd);
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_Steaks += AmountGained;
+                                    ExpMainLevel += VarBattleExp_Steaks * AmountGained;
+                                    ExpBattle += VarBattleExp_Steaks * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_Steaks, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Steaks + VarBattleName_Steaks + ": " + AmountGained + NewItemImgEnd);
+
+                                    CurrentlyFighting = false;
+
+                                }
+
                             } else {
-                                AmountGained = ItemMultiplierGathering;
+                                AmountGained = ItemMultiplierBattle;
+                                VarBattleAmount_Bones += AmountGained;
+                                ExpMainLevel += VarBattleExp_Bones * AmountGained;
+                                ExpBattle += VarBattleExp_Bones * AmountGained;
+                                ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_CowHide += AmountGained;
                                 ExpMainLevel += VarBattleExp_CowHide * AmountGained;
                                 ExpBattle += VarBattleExp_CowHide * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_CowHide + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_CowHide, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_CowHide + VarBattleName_CowHide + ": " + AmountGained + NewItemImgEnd);
                                 AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_Steaks += AmountGained;
                                 ExpMainLevel += VarBattleExp_Steaks * AmountGained;
                                 ExpBattle += VarBattleExp_Steaks * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_Steaks + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_Steaks, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Steaks + VarBattleName_Steaks + ": " + AmountGained + NewItemImgEnd);
+
+                                CurrentlyFighting = false;
+                            }
+                        } else if (EnemyName == "Chicken") {
+                            if (EnemyHP > 0) {
+                                EnemyHP -= PlayerDamage
+                                if (EnemyHP > 0) {
+                                    StatsHealthCurrent -= EnemyDamage
+                                } else {
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_Bones += AmountGained;
+                                    ExpMainLevel += VarBattleExp_Bones * AmountGained;
+                                    ExpBattle += VarBattleExp_Bones * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                    CurrentlyFighting = false;
+                                    AmountGained = ItemMultiplierGathering;
+                                    VarBattleAmount_ChickenFeathers += AmountGained;
+                                    ExpMainLevel += VarBattleExp_ChickenFeathers * AmountGained;
+                                    ExpBattle += VarBattleExp_ChickenFeathers * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_ChickenFeathers, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_ChickenFeathers + VarBattleName_ChickenFeathers + ": " + AmountGained + NewItemImgEnd);
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_Eggs += AmountGained;
+                                    ExpMainLevel += VarBattleExp_Eggs * AmountGained;
+                                    ExpBattle += VarBattleExp_Eggs * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_Eggs, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Eggs + VarBattleName_Eggs + ": " + AmountGained + NewItemImgEnd);
+
+                                }
+
+                            } else {
                                 AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_Bones += AmountGained;
                                 ExpMainLevel += VarBattleExp_Bones * AmountGained;
                                 ExpBattle += VarBattleExp_Bones * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
-                                CurrentlyFighting = false;
-
-                            }
-
-                        } else {
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_CowHide += AmountGained;
-                            ExpMainLevel += VarBattleExp_CowHide * AmountGained;
-                            ExpBattle += VarBattleExp_CowHide * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_CowHide + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Steaks += AmountGained;
-                            ExpMainLevel += VarBattleExp_Steaks * AmountGained;
-                            ExpBattle += VarBattleExp_Steaks * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Steaks + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Bones += AmountGained;
-                            ExpMainLevel += VarBattleExp_Bones * AmountGained;
-                            ExpBattle += VarBattleExp_Bones * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
-                            CurrentlyFighting = false;
-                        }
-                    } else if (EnemyName == "Chicken") {
-                        if (EnemyHP > 0) {
-                            EnemyHP -= PlayerDamage
-                            if (EnemyHP > 0) {
-                                StatsHealthCurrent -= EnemyDamage
-                            } else {
-                                AmountGained = ItemMultiplierGathering;
+                                ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_ChickenFeathers += AmountGained;
                                 ExpMainLevel += VarBattleExp_ChickenFeathers * AmountGained;
                                 ExpBattle += VarBattleExp_ChickenFeathers * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_ChickenFeathers + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_ChickenFeathers, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_ChickenFeathers + VarBattleName_ChickenFeathers + ": " + AmountGained + NewItemImgEnd);
                                 AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_Eggs += AmountGained;
                                 ExpMainLevel += VarBattleExp_Eggs * AmountGained;
                                 ExpBattle += VarBattleExp_Eggs * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_Eggs + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_Eggs, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Eggs + VarBattleName_Eggs + ": " + AmountGained + NewItemImgEnd);
+
+                                CurrentlyFighting = false;
+                            }
+                        } else if (EnemyName == "Pig") {
+                            if (EnemyHP > 0) {
+                                EnemyHP -= PlayerDamage
+                                if (EnemyHP > 0) {
+                                    StatsHealthCurrent -= EnemyDamage
+                                } else {
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_Bones += AmountGained;
+                                    ExpMainLevel += VarBattleExp_Bones * AmountGained;
+                                    ExpBattle += VarBattleExp_Bones * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                    AmountGained = ItemMultiplierGathering;
+                                    VarBattleAmount_PigSkin += AmountGained;
+                                    ExpMainLevel += VarBattleExp_PigSkin * AmountGained;
+                                    ExpBattle += VarBattleExp_PigSkin * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_PigSkin, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_PigSkin + VarBattleName_PigSkin + ": " + AmountGained + NewItemImgEnd);
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_Ham += AmountGained;
+                                    ExpMainLevel += VarBattleExp_Ham * AmountGained;
+                                    ExpBattle += VarBattleExp_Ham * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_Ham, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Ham + VarBattleName_Ham + ": " + AmountGained + NewItemImgEnd);
+
+                                    CurrentlyFighting = false;
+                                }
+
+                            } else {
                                 AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_Bones += AmountGained;
                                 ExpMainLevel += VarBattleExp_Bones * AmountGained;
                                 ExpBattle += VarBattleExp_Bones * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
-                                CurrentlyFighting = false;
-                            }
-
-                        } else {
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_ChickenFeathers += AmountGained;
-                            ExpMainLevel += VarBattleExp_ChickenFeathers * AmountGained;
-                            ExpBattle += VarBattleExp_ChickenFeathers * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_ChickenFeathers + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Eggs += AmountGained;
-                            ExpMainLevel += VarBattleExp_Eggs * AmountGained;
-                            ExpBattle += VarBattleExp_Eggs * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Eggs + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Bones += AmountGained;
-                            ExpMainLevel += VarBattleExp_Bones * AmountGained;
-                            ExpBattle += VarBattleExp_Bones * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
-                            CurrentlyFighting = false;
-                        }
-                    } else if (EnemyName == "Pig") {
-                        if (EnemyHP > 0) {
-                            EnemyHP -= PlayerDamage
-                            if (EnemyHP > 0) {
-                                StatsHealthCurrent -= EnemyDamage
-                            } else {
-                                AmountGained = ItemMultiplierGathering;
+                                ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_PigSkin += AmountGained;
                                 ExpMainLevel += VarBattleExp_PigSkin * AmountGained;
                                 ExpBattle += VarBattleExp_PigSkin * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_PigSkin + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_PigSkin, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_PigSkin + VarBattleName_PigSkin + ": " + AmountGained + NewItemImgEnd);
                                 AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_Ham += AmountGained;
                                 ExpMainLevel += VarBattleExp_Ham * AmountGained;
                                 ExpBattle += VarBattleExp_Ham * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_Ham + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_Ham, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Ham + VarBattleName_Ham + ": " + AmountGained + NewItemImgEnd);
+
+                                CurrentlyFighting = false;
+                            }
+                        } else if (EnemyName == "Horse") {
+                            if (EnemyHP > 0) {
+                                EnemyHP -= PlayerDamage
+                                if (EnemyHP > 0) {
+                                    StatsHealthCurrent -= EnemyDamage
+                                } else {
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_Bones += AmountGained;
+                                    ExpMainLevel += VarBattleExp_Bones * AmountGained;
+                                    ExpBattle += VarBattleExp_Bones * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                    AmountGained = ItemMultiplierGathering;
+                                    VarBattleAmount_HorseHide += AmountGained;
+                                    ExpMainLevel += VarBattleExp_HorseHide * AmountGained;
+                                    ExpBattle += VarBattleExp_HorseHide * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_HorseHide, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_HorseHide + VarBattleName_HorseHide + ": " + AmountGained + NewItemImgEnd);
+                                    AmountGained = ItemMultiplierBattle;
+                                    VarBattleAmount_HorseMeat += AmountGained;
+                                    ExpMainLevel += VarBattleExp_HorseMeat * AmountGained;
+                                    ExpBattle += VarBattleExp_HorseMeat * AmountGained;
+                                    ShowItemsGained(VarBattleImgDir_HorseMeat, AmountGained)
+                                    RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_HorseMeat + VarBattleName_HorseMeat + ": " + AmountGained + NewItemImgEnd);
+
+                                    CurrentlyFighting = false;
+                                }
+
+                            } else {
                                 AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_Bones += AmountGained;
                                 ExpMainLevel += VarBattleExp_Bones * AmountGained;
                                 ExpBattle += VarBattleExp_Bones * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
-                                CurrentlyFighting = false;
-                            }
-
-                        } else {
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_PigSkin += AmountGained;
-                            ExpMainLevel += VarBattleExp_PigSkin * AmountGained;
-                            ExpBattle += VarBattleExp_PigSkin * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_PigSkin + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Ham += AmountGained;
-                            ExpMainLevel += VarBattleExp_Ham * AmountGained;
-                            ExpBattle += VarBattleExp_Ham * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Ham + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Bones += AmountGained;
-                            ExpMainLevel += VarBattleExp_Bones * AmountGained;
-                            ExpBattle += VarBattleExp_Bones * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
-                            CurrentlyFighting = false;
-                        }
-                    } else if (EnemyName == "Horse") {
-                        if (EnemyHP > 0) {
-                            EnemyHP -= PlayerDamage
-                            if (EnemyHP > 0) {
-                                StatsHealthCurrent -= EnemyDamage
-                            } else {
-                                AmountGained = ItemMultiplierGathering;
+                                ShowItemsGained(VarBattleImgDir_Bones, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_Bones + VarBattleName_Bones + ": " + AmountGained + NewItemImgEnd);
+                                AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_HorseHide += AmountGained;
                                 ExpMainLevel += VarBattleExp_HorseHide * AmountGained;
                                 ExpBattle += VarBattleExp_HorseHide * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_HorseHide + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_HorseHide, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_HorseHide + VarBattleName_HorseHide + ": " + AmountGained + NewItemImgEnd);
                                 AmountGained = ItemMultiplierBattle;
                                 VarBattleAmount_HorseMeat += AmountGained;
                                 ExpMainLevel += VarBattleExp_HorseMeat * AmountGained;
                                 ExpBattle += VarBattleExp_HorseMeat * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_HorseMeat + ": " + AmountGained);
-                                AmountGained = ItemMultiplierBattle;
-                                VarBattleAmount_Bones += AmountGained;
-                                ExpMainLevel += VarBattleExp_Bones * AmountGained;
-                                ExpBattle += VarBattleExp_Bones * AmountGained;
-                                RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
+                                ShowItemsGained(VarBattleImgDir_HorseMeat, AmountGained)
+                                RotateItemsGainedBattle(NewItemImgBeg + VarBattleImg_HorseMeat + VarBattleName_HorseMeat + ": " + AmountGained + NewItemImgEnd);
+
                                 CurrentlyFighting = false;
                             }
-
-                        } else {
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_HorseHide += AmountGained;
-                            ExpMainLevel += VarBattleExp_HorseHide * AmountGained;
-                            ExpBattle += VarBattleExp_HorseHide * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_HorseHide + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Eggs += AmountGained;
-                            ExpMainLevel += VarBattleExp_Eggs * AmountGained;
-                            ExpBattle += VarBattleExp_Eggs * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Eggs + ": " + AmountGained);
-                            AmountGained = ItemMultiplierBattle;
-                            VarBattleAmount_Bones += AmountGained;
-                            ExpMainLevel += VarBattleExp_Bones * AmountGained;
-                            ExpBattle += VarBattleExp_Bones * AmountGained;
-                            RotateItemsGainedBattle(VarBattleName_Bones + ": " + AmountGained);
-                            CurrentlyFighting = false;
                         }
                     }
-                }
 
+                }
+                i++
             }
         }, IntervalTime)
     }
@@ -3503,55 +4232,65 @@ $(document).ready(function() {
             clearInterval(IntervalGatheringForest)
         }
         IntervalGatheringForest = setInterval(function() {
-            RunningGatheringForest = true;
-            console.log("Running Gathering Forest")
-            r = getRandom(0, 1000);
-            if (r <= VarGatheringChance_Forest_GreenGrass) {
-                AmountGained = ItemMultiplierGathering;
-                VarGatheringAmount_GreenGrass += AmountGained;
-                ExpMainLevel += VarGatheringExp_GreenGrass * AmountGained;
-                ExpGathering += VarGatheringExp_GreenGrass * AmountGained;
-                RotateItemsGainedGathering(VarGatheringName_GreenGrass + ": " + AmountGained);
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarGatheringChance_Forest_EyeDrops) {
-                AmountGained = ItemMultiplierGathering;
-                VarGatheringAmount_EyeDrops += AmountGained;
-                ExpMainLevel += VarGatheringExp_EyeDrops * AmountGained;
-                ExpGathering += VarGatheringExp_EyeDrops * AmountGained;
-                RotateItemsGainedGathering(VarGatheringName_EyeDrops + ": " + AmountGained);
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarGatheringChance_Forest_Ether) {
-                AmountGained = ItemMultiplierGathering;
-                VarGatheringAmount_Ether += AmountGained;
-                ExpMainLevel += VarGatheringExp_Ether * AmountGained;
-                ExpGathering += VarGatheringExp_Ether * AmountGained;
-                RotateItemsGainedGathering(VarGatheringName_Ether + ": " + AmountGained);
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarGatheringChance_Forest_Potion) {
-                AmountGained = ItemMultiplierGathering;
-                VarGatheringAmount_Potion += AmountGained;
-                ExpMainLevel += VarGatheringExp_Potion * AmountGained;
-                ExpGathering += VarGatheringExp_Potion * AmountGained;
-                RotateItemsGainedGathering(VarGatheringName_Potion + ": " + AmountGained);
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarGatheringChance_Forest_PheonixDown) {
-                AmountGained = ItemMultiplierGathering;
-                VarGatheringAmount_PheonixDown += AmountGained;
-                ExpMainLevel += VarGatheringExp_PheonixDown * AmountGained;
-                ExpGathering += VarGatheringExp_PheonixDown * AmountGained;
-                RotateItemsGainedGathering(VarGatheringName_PheonixDown + ": " + AmountGained);
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarGatheringChance_Forest_HastePotionLvL1) {
-                AmountGained = ItemMultiplierGathering;
-                VarGatheringAmount_HastePotionLvL1 += AmountGained;
-                ExpMainLevel += VarGatheringExp_HastePotionLvL1 * AmountGained;
-                ExpGathering += VarGatheringExp_HastePotionLvL1 * AmountGained;
-                RotateItemsGainedGathering(VarGatheringName_HastePotionLvL1 + ": " + AmountGained);
+            i = 0;
+            while (i < NumberOfTurnsAtOnce) {
+                RunningGatheringForest = true;
+                console.log("Running Gathering Forest")
+                r = getRandom(0, 1000);
+                if (r <= VarGatheringChance_Forest_GreenGrass) {
+                    AmountGained = ItemMultiplierGathering;
+                    VarGatheringAmount_GreenGrass += AmountGained;
+                    ExpMainLevel += VarGatheringExp_GreenGrass * AmountGained;
+                    ExpGathering += VarGatheringExp_GreenGrass * AmountGained;
+                    ShowItemsGained(VarGatheringImgDir_GreenGrass, AmountGained)
+                    RotateItemsGainedGathering(NewItemImgBeg + VarGatheringImg_GreenGrass + VarGatheringName_GreenGrass + ": " + AmountGained + NewItemImgEnd);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarGatheringChance_Forest_EyeDrops) {
+                    AmountGained = ItemMultiplierGathering;
+                    VarGatheringAmount_EyeDrops += AmountGained;
+                    ExpMainLevel += VarGatheringExp_EyeDrops * AmountGained;
+                    ExpGathering += VarGatheringExp_EyeDrops * AmountGained;
+                    ShowItemsGained(VarGatheringImgDir_EyeDrops, AmountGained)
+                    RotateItemsGainedGathering(NewItemImgBeg + VarGatheringImg_EyeDrops + VarGatheringName_EyeDrops + ": " + AmountGained + NewItemImgEnd);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarGatheringChance_Forest_Ether) {
+                    AmountGained = ItemMultiplierGathering;
+                    VarGatheringAmount_Ether += AmountGained;
+                    ExpMainLevel += VarGatheringExp_Ether * AmountGained;
+                    ExpGathering += VarGatheringExp_Ether * AmountGained;
+                    ShowItemsGained(VarGatheringImgDir_Ether, AmountGained)
+                    RotateItemsGainedGathering(NewItemImgBeg + VarGatheringImg_Ether + VarGatheringName_Ether + ": " + AmountGained + NewItemImgEnd);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarGatheringChance_Forest_Potion) {
+                    AmountGained = ItemMultiplierGathering;
+                    VarGatheringAmount_Potion += AmountGained;
+                    ExpMainLevel += VarGatheringExp_Potion * AmountGained;
+                    ExpGathering += VarGatheringExp_Potion * AmountGained;
+                    ShowItemsGained(VarGatheringImgDir_Potion, AmountGained)
+                    RotateItemsGainedGathering(NewItemImgBeg + VarGatheringImg_Potion + VarGatheringName_Potion + ": " + AmountGained + NewItemImgEnd);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarGatheringChance_Forest_PhoenixDown) {
+                    AmountGained = ItemMultiplierGathering;
+                    VarGatheringAmount_PhoenixDown += AmountGained;
+                    ExpMainLevel += VarGatheringExp_PhoenixDown * AmountGained;
+                    ExpGathering += VarGatheringExp_PhoenixDown * AmountGained;
+                    ShowItemsGained(VarGatheringImgDir_PhoenixDown, AmountGained)
+                    RotateItemsGainedGathering(NewItemImgBeg + VarGatheringImg_PhoenixDown + VarGatheringName_PhoenixDown + ": " + AmountGained + NewItemImgEnd);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarGatheringChance_Forest_HastePotionLvL1) {
+                    AmountGained = ItemMultiplierGathering;
+                    VarGatheringAmount_HastePotionLvL1 += AmountGained;
+                    ExpMainLevel += VarGatheringExp_HastePotionLvL1 * AmountGained;
+                    ExpGathering += VarGatheringExp_HastePotionLvL1 * AmountGained;
+                    ShowItemsGained(VarGatheringImgDir_HastePotionLvL1, AmountGained)
+                    RotateItemsGainedGathering(NewItemImgBeg + VarGatheringImg_HastePotionLvL1 + VarGatheringName_HastePotionLvL1 + ": " + AmountGained + NewItemImgEnd);
+                }
+                i++;
             }
         }, IntervalTime)
     }
@@ -3562,49 +4301,58 @@ $(document).ready(function() {
             clearInterval(IntervalMiningUndergroundCity)
         }
         IntervalMiningUndergroundCity = setInterval(function() {
-            RunningMiningUndgroundCity = true;
-            r = getRandom(0, 1000);
-            if (r <= VarMiningChanceUndergroundCity_Coal) {
-                AmountGained = ItemMultiplierMining;
-                VarMiningAmount_Coal += AmountGained;
-                ExpMainLevel += VarMiningExp_Coal * AmountGained;
-                ExpMining += VarMiningExp_Coal * AmountGained;
-                RotateItemsGainedMining("Coal: " + AmountGained);
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarMiningChanceUndergroundCity_Iron) {
-                AmountGained = ItemMultiplierMining;
-                VarMiningAmount_Iron += AmountGained;
-                ExpMainLevel += VarMiningExp_Iron * AmountGained;
-                ExpMining += VarMiningExp_Iron * AmountGained;
-                RotateItemsGainedMining("Iron: " + AmountGained);
+            i = 0;
+            while (i < NumberOfTurnsAtOnce) {
+                RunningMiningUndgroundCity = true;
+                r = getRandom(0, 1000);
+                if (r <= VarMiningChanceUndergroundCity_Coal) {
+                    AmountGained = ItemMultiplierMining;
+                    VarMiningAmount_Coal += AmountGained;
+                    ExpMainLevel += VarMiningExp_Coal * AmountGained;
+                    ExpMining += VarMiningExp_Coal * AmountGained;
+                    ShowItemsGained(VarMiningImgDir_Coal, AmountGained)
+                    RotateItemsGainedMining(NewItemImgBeg + VarMiningImg_Coal + VarMiningName_Coal + ": " + AmountGained + NewItemImgEnd);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarMiningChanceUndergroundCity_Iron) {
+                    AmountGained = ItemMultiplierMining;
+                    VarMiningAmount_Iron += AmountGained;
+                    ExpMainLevel += VarMiningExp_Iron * AmountGained;
+                    ExpMining += VarMiningExp_Iron * AmountGained;
+                    ShowItemsGained(VarMiningImgDir_Iron, AmountGained)
+                    RotateItemsGainedMining(NewItemImgBeg + VarMiningImg_Iron + VarMiningName_Iron + ": " + AmountGained + NewItemImgEnd);
 
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarMiningChanceUndergroundCity_Copper) {
-                AmountGained = ItemMultiplierMining;
-                VarMiningAmount_Copper += AmountGained;
-                ExpMainLevel += VarMiningExp_Copper * AmountGained;
-                ExpMining += VarMiningExp_Copper * AmountGained;
-                RotateItemsGainedMining("Copper: " + AmountGained);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarMiningChanceUndergroundCity_Copper) {
+                    AmountGained = ItemMultiplierMining;
+                    VarMiningAmount_Copper += AmountGained;
+                    ExpMainLevel += VarMiningExp_Copper * AmountGained;
+                    ExpMining += VarMiningExp_Copper * AmountGained;
+                    ShowItemsGained(VarMiningImgDir_Copper, AmountGained)
+                    RotateItemsGainedMining(NewItemImgBeg + VarMiningImg_Copper + VarMiningName_Copper + ": " + AmountGained + NewItemImgEnd);
 
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarMiningChanceUndergroundCity_Bronze) {
-                AmountGained = ItemMultiplierMining;
-                VarMiningAmount_Bronze += AmountGained;
-                ExpMainLevel += VarMiningExp_Bronze * AmountGained;
-                ExpMining += VarMiningExp_Bronze * AmountGained;
-                RotateItemsGainedMining("Bronze: " + AmountGained);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarMiningChanceUndergroundCity_Bronze) {
+                    AmountGained = ItemMultiplierMining;
+                    VarMiningAmount_Bronze += AmountGained;
+                    ExpMainLevel += VarMiningExp_Bronze * AmountGained;
+                    ExpMining += VarMiningExp_Bronze * AmountGained;
+                    ShowItemsGained(VarMiningImgDir_Bronze, AmountGained)
+                    RotateItemsGainedMining(NewItemImgBeg + VarMiningImg_Bronze + VarMiningName_Bronze + ": " + AmountGained + NewItemImgEnd);
 
-            }
-            r = getRandom(0, 1000);
-            if (r <= VarMiningChanceUndergroundCity_Silver) {
-                AmountGained = ItemMultiplierMining;
-                VarMiningAmount_Silver += AmountGained;
-                ExpMainLevel += VarMiningExp_Silver * AmountGained;
-                ExpMining += VarMiningExp_Silver * AmountGained;
-                RotateItemsGainedMining("Silver: " + AmountGained);
+                }
+                r = getRandom(0, 1000);
+                if (r <= VarMiningChanceUndergroundCity_Silver) {
+                    AmountGained = ItemMultiplierMining;
+                    VarMiningAmount_Silver += AmountGained;
+                    ExpMainLevel += VarMiningExp_Silver * AmountGained;
+                    ExpMining += VarMiningExp_Silver * AmountGained;
+                    ShowItemsGained(VarMiningImgDir_Silver, AmountGained)
+                    RotateItemsGainedMining(NewItemImgBeg + VarMiningImg_Silver + VarMiningName_Silver + ": " + AmountGained + NewItemImgEnd);
+                }
+                i++
             }
         }, IntervalTime);
     }
@@ -3734,7 +4482,7 @@ $(document).ready(function() {
 
             if (RunningGatheringForest == true) {
                 clearInterval(IntervalGatheringForest);
-                console.log(GatheringForest(IntervalTimeGatheringForestHasteLvL1))
+
                 GatheringForest(IntervalTimeGatheringForestHasteLvL1);
             }
             if (RunningMiningUndgroundCity == true) {
@@ -3779,13 +4527,14 @@ $(document).ready(function() {
         });
     }
 
+
     function GetSetName() {
         //***Get and Set Player Name
         var name = getCookie("name");
         if (name) {
             $(".Name").html(name);
         } else {
-            name = window.prompt("Enter your name: ");
+            //name = window.prompt("Enter your name: ");
             $(".Name").html(name);
             setCookie("name", name, 760);
         }
@@ -3815,7 +4564,7 @@ $(document).ready(function() {
         if (WhichMenu == "Battle" && Option == "Farm") {
             MainInfoText = `
                             Currently Fighting: ${EnemyName}
-                            <br>${VarItemsName_PheonixDown}: ${VarItemsAmount_PheonixDown}
+                            <br>${VarItemsName_PhoenixDown}: ${VarItemsAmount_PhoenixDown}
                             <br>HP: ${StatsHealthCurrent} MP:${StatsMP}
                                 <br>${PotionsHasteShowStatus}            
                                 <br>Battle Level: ${LevelBattle} 
@@ -3831,7 +4580,7 @@ $(document).ready(function() {
                         `;
         } else if (WhichMenu == "Battle") {
             MainInfoText = `
-                            <br>${VarItemsName_PheonixDown}: ${VarItemsAmount_PheonixDown}
+                            <br>${VarItemsName_PhoenixDown}: ${VarItemsAmount_PhoenixDown}
                             <br>HP: ${StatsHealthCurrent} MP:${StatsMP}
                             <br>${PotionsHasteShowStatus}            
                             <br>Battle Level: ${LevelBattle} 
